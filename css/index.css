@@ -153,8 +153,8 @@ img {
   flex-wrap: nowrap;
 }
 .container .bingo-content {
-  width: 70%;
-  margin-top: 10%;
+  width: 50%;
+  margin-top: 150px;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
@@ -223,6 +223,9 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 footer .footer-nav {
   align-content: space-around;
