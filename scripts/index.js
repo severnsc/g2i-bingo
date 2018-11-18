@@ -49,6 +49,7 @@ function joshBingo() {
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";
+  alert("working!");
 }
 
 // To be updated as class goes on
@@ -67,11 +68,11 @@ function newBingoCanvas() {
 
 buttons.forEach(input => {
   input.addEventListener("click", () => {
-    if (input.value === "josh") {
+    if (input.value === "Josh") {
       joshBingo();
-    } else if (input.value === "dustin") {
+    } else if (input.value === "Dustin") {
       dustinBingo();
-    } else if (input.value === "other") {
+    } else if (input.value === "Other") {
       otherBingo();
     } else {
       console.log("Something went wrong.");
