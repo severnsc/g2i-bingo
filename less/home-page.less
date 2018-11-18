@@ -3,16 +3,12 @@
   .center(row, center, flex-start, nowrap);
 
   .bingo-content {
-    width: 60%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 500px;
     margin-top: 150px;
 
     @media @tablet {
-      width: 80%;
-    }
-
-    @media @mobile {
-      width: 95%;
+      width: 90%;
     }
 
     .border();
@@ -28,6 +24,17 @@
         .border();
         width: 20%;
         padding-bottom: 20%;
+        position: relative;
+        z-index: 1;
+        background: lighten(@athens-gray, 8%);
+
+        .bingo-text {
+          position: fixed;
+          z-index: 5;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
       }
     }
   }

@@ -153,8 +153,8 @@ img {
   flex-wrap: nowrap;
 }
 .container .bingo-content {
-  width: 60%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 500px;
   margin-top: 150px;
   border: 1px solid black;
   display: flex;
@@ -165,12 +165,7 @@ img {
 }
 @media (max-width: 800px) {
   .container .bingo-content {
-    width: 80%;
-  }
-}
-@media (max-width: 500px) {
-  .container .bingo-content {
-    width: 95%;
+    width: 90%;
   }
 }
 .container .bingo-content .bingo-canvas {
@@ -185,6 +180,16 @@ img {
   border: 1px solid black;
   width: 20%;
   padding-bottom: 20%;
+  position: relative;
+  z-index: 1;
+  background: #fdfdfe;
+}
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 header {
   width: 100%;
