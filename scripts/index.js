@@ -1,6 +1,10 @@
 const buttons = document.querySelectorAll("input");
 const bingoCanvas = document.querySelectorAll(".bingo-canvas");
 const allDivs = bingoCanvas.querySelectorAll("div");
+const day = function() {
+  // To be updated
+  // Will be used to varify if it's Sunday so that the banjo emoji will be placed somewhere in the grid
+};
 
 let arrayBtnResponse = {
   josh: "y",
@@ -22,7 +26,19 @@ const joshPhrases = {
     "Slap that there",
     "Guys, this is SO POWERFUL.",
     "Secret sauce",
-    "(Josh is wearing a Lambda hat)"
+    "(Josh is wearing a Lambda hat)",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
   ]
 };
 
