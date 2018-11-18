@@ -190,11 +190,13 @@ header h1 {
   margin-top: 1%;
   margin-left: 15%;
   color: #cb808e;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header .nav-bar {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  margin-right: 2%;
 }
 header .btn {
   align-items: baseline;
@@ -210,4 +212,18 @@ header .btn {
 }
 header .btn:hover {
   color: white;
+}
+footer {
+  width: 100%;
+  background: #e6e9ec;
+  color: #1e2124;
+  height: 50px;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .footer-nav {
+  align-content: space-around;
 }
