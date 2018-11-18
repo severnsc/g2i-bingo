@@ -164,6 +164,10 @@ img {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
+  border: 5px solid #0070ff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 @media (max-width: 800px) {
   .container .bingo-content {
@@ -187,7 +191,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: 1px solid black;
+  border: 1px solid #b3d4ff;
 }
 .container .bingo-content .bingo-canvas .bingo-space .bingo-text {
   position: absolute;
@@ -201,7 +205,12 @@ img {
   text-align: center;
   width: 100%;
   height: 100%;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .container .bingo-content .bingo-canvas .bingo-space .bingo-text {
+    font-size: 1.4rem;
+  }
 }
 header {
   width: 100%;
