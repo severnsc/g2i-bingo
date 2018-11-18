@@ -185,10 +185,8 @@ img {
   background: #fdfdfe;
 }
 .container .bingo-content .bingo-canvas .bingo-space .bingo-text {
-  position: fixed;
+  position: absolute;
   z-index: 5;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 header {

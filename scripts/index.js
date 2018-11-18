@@ -38,12 +38,9 @@ const joshPhrases = {
   ]
 };
 
-// To be updated when Dustin is teaching us
-const dustinPhrases = {};
+const dustinPhrases = {}; // To be updated when Dustin is teaching us
 
 function newBingoCanvas() {
-  // let tempObj = joshPhrases;
-
   // 25 for 25 divs (5 * 5) for bingo spaces
   for (i = 0; i < 25; i++) {
     let newSpace = document.createElement("div");
@@ -53,10 +50,13 @@ function newBingoCanvas() {
     let insideText = document.createElement("div");
     insideText.classList.add("bingo-text");
     newSpace.appendChild(insideText);
+    let text = document.getElementsByClassName("space" + (i + 1));
+    if (i + 1 === 13) {
+      console.log("Dude."); // Stopping point for the evening
+    }
   }
 }
 
-// Add in draw canvas function once created
 function joshBingo() {
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
@@ -64,7 +64,6 @@ function joshBingo() {
   newBingoCanvas();
 }
 
-// To be updated as cohort continues
 function dustinBingo() {
   arrayBtnResponse.josh = "n";
   arrayBtnResponse.dustin = "y";
@@ -72,7 +71,6 @@ function dustinBingo() {
   alert("That feature will be added once Dustin starts teaching.");
 }
 
-// To be updated as cohort continues
 function otherBingo() {
   arrayBtnResponse.josh = "n";
   arrayBtnResponse.dustin = "n";
