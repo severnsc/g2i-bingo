@@ -189,6 +189,7 @@ header h1 {
   font-size: 4rem;
   margin-top: 1%;
   margin-left: 15%;
+  color: #cb808e;
 }
 header .nav-bar {
   width: 100%;
@@ -199,15 +200,14 @@ header .btn {
   align-items: baseline;
   color: #cb808e;
   font-size: 2rem;
-  margin: 0 0.5rem;
-  border: 2px solid black;
+  margin: 1%;
+  border: 2px #96001c;
   border-radius: 10px;
   height: 30px;
-  width: 50px;
-  background-color: white;
-  font-family: Futura, Helvetica, sans-serif;
+  width: 20%;
+  background-color: #96001c;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header .btn:hover {
-  background-color: #cb808e;
-  color: #96001c;
+  color: white;
 }
