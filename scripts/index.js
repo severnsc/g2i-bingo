@@ -1,13 +1,11 @@
 const buttons = document.querySelectorAll("input");
 const bingoCanvas = document.querySelector(".bingo-canvas");
 const allDivs = bingoCanvas.querySelectorAll("div");
-
 let arrayBtnResponse = {
   josh: "n",
   dustin: "n",
   other: "n"
 };
-
 const joshPhrases = {
   phrases: [
     "BIG BOSS",
@@ -23,7 +21,7 @@ const joshPhrases = {
     "Guys, this is SO POWERFUL.",
     "Secret sauce",
     "(Josh is wearing a Lambda hat)",
-    "(Any given spelling error)", // do you think that this might be too mean?
+    "(Any given spelling error)", // Do you think that we should put this in here?
     "Isn't that crazy?",
     "Mind-blowing (or any variation thereof)",
     "Designers spent 20 hours...",
@@ -37,7 +35,6 @@ const joshPhrases = {
     "Placeholder"
   ]
 };
-
 const dustinPhrases = {}; // To be updated when Dustin is teaching us
 
 function newBingoCanvas() {
@@ -45,15 +42,18 @@ function newBingoCanvas() {
   for (i = 0; i < 25; i++) {
     let newSpace = document.createElement("div");
     newSpace.classList.add("bingo-space");
-    newSpace.classList.add("space" + (i + 1));
     bingoCanvas.appendChild(newSpace);
-    let insideText = document.createElement("div");
+
+    let insideText = document.createElement("p");
     insideText.classList.add("bingo-text");
+    insideText.classList.add("space" + (i + 1));
     newSpace.appendChild(insideText);
-    let text = document.getElementsByClassName("space" + (i + 1));
-    if (i + 1 === 13) {
-      console.log("Dude."); // Stopping point for the evening
-    }
+
+    document.getElementsByClassName("space" + (i + 1)).innerHTML = function() {
+      if ((arrayBtnResponse.josh = "y")) {
+        // Stopped working here for the evening
+      }
+    };
   }
 }
 
