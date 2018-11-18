@@ -5,7 +5,7 @@ let arrayBtnResponse = {
   josh: "n",
   dustin: "n",
   other: "n",
-  shuffleCount: 0
+  shuffleNum: 0
 };
 let dustinPhrases = []; // To be updated when Dustin is our teacher
 let otherPhrases = []; // To be updated when we get other teachers
@@ -38,12 +38,13 @@ let joshPhrases = [
 ];
 
 function getBingoText() {
+  return "Dude, this is really coming together";
+
   arrayBtnResponse.shuffleNum = 0;
   let num = Math.floor(Math.random() * 24) + 1 - arrayBtnResponse.shuffleCount;
   if (num <= 0) {
     num = 24;
   }
-
   if (arrayBtnResponse.josh === "y") {
     //================================== Stopped here last evening
   } else if (arrayBtnResponse.dustin === "y") {
@@ -51,58 +52,48 @@ function getBingoText() {
   }
 }
 
-function spaceListeners() {
+function turnSpaceGray() {
   const spaces = document.querySelectorAll(".bingo-space");
   spaces.forEach(space => {
     space.addEventListener("click", () => {
-      if (space.style.backgroundColor === "gray") {
+      if (space.style.backgroundColor === "lightgray") {
         space.style.backgroundColor = "white";
       } else {
-        space.style.backgroundColor = "gray";
+        space.style.backgroundColor = "lightgray";
         console.log("Dude.");
       }
     });
   });
 }
-
 function makeBingoCanvas() {
   // 25 for 25 divs (5 * 5) for bingo spaces
   for (i = 0; i < 25; i++) {
     let newSpace = document.createElement("div");
+    let insideText = document.createElement("div");
     newSpace.classList.add("bingo-space");
     bingoCanvas.appendChild(newSpace);
-
-    let insideText = document.createElement("p");
     insideText.classList.add("bingo-text");
     insideText.classList.add("space" + (i + 1));
+    insideText.innerHTML = getBingoText();
     newSpace.appendChild(insideText);
-
-    document.getElementsByClassName(
-      "space" + (i + 1)
-    ).innerHTML = getBingoText();
   }
 
-  spaceListeners();
+  turnSpaceGray();
 }
-
 function joshBingo() {
   if (arrayBtnResponse.josh === "y") return;
-
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";
   makeBingoCanvas();
 }
-
 function dustinBingo() {
   alert("That feature will be added once Dustin starts teaching.");
 }
-
 function otherBingo() {
   alert("That feature will be added once we get more instructors.");
 }
-
-function addEvent() {
+function listenNavBtns() {
   buttons.forEach(input => {
     input.addEventListener("click", () => {
       if (input.value === "Josh") {
@@ -117,6 +108,5 @@ function addEvent() {
     });
   });
 }
-
-addEvent(); // Adds even listeners to buttons
+listenNavBtns(); // Adds even listeners to buttons
 joshBingo(); // Builds a bingo board for josh as default - Can be changed when cohort moves on
