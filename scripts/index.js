@@ -4,9 +4,12 @@ const allDivs = bingoCanvas.querySelectorAll("div");
 let arrayBtnResponse = {
   josh: "n",
   dustin: "n",
-  other: "n"
+  other: "n",
+  shuffleCount: 0
 };
-const joshPhrases = [
+let dustinPhrases = []; // To be updated when Dustin is our teacher
+let otherPhrases = []; // To be updated when we get other teachers
+let joshPhrases = [
   { text: "BIG BOSS", selected: "n" },
   { text: "Isn't that cool?", selected: "n" },
   { text: "5 minute break", selected: "n" },
@@ -33,12 +36,15 @@ const joshPhrases = [
   { text: "Placeholder", selected: "n" },
   { text: "Placeholder", selected: "n" }
 ];
-const dustinPhrases = []; // To be updated when Dustin is our teacher
-const otherPhrases = []; // To be updated when we get other teachers
 
 function getBingoText() {
-  let arrNum = Math.floor(Math.random() * 24) + 1;
-  console.log(arrNum);
+  arrayBtnResponse.shuffleNum = 0;
+  let num = Math.floor(Math.random() * 24) + 1 - arrayBtnResponse.shuffleCount;
+  if (arrayBtnResponse.josh === "y") {
+    console.log(joshPhrases[num].text);
+  } else if (arrayBtnResponse.dustin === "y") {
+  } else if (arrayBtnResponse.other === "y") {
+  }
 }
 
 function makeBingoCanvas() {
@@ -58,7 +64,6 @@ function makeBingoCanvas() {
     ).innerHTML = getBingoText();
   }
 }
-
 function joshBingo() {
   if (arrayBtnResponse.josh === "y") return;
 
@@ -67,15 +72,12 @@ function joshBingo() {
   arrayBtnResponse.other = "n";
   makeBingoCanvas();
 }
-
 function dustinBingo() {
   alert("That feature will be added once Dustin starts teaching.");
 }
-
 function otherBingo() {
   alert("That feature will be added once we get more instructors.");
 }
-
 function addEvent() {
   buttons.forEach(input => {
     input.addEventListener("click", () => {
@@ -91,6 +93,5 @@ function addEvent() {
     });
   });
 }
-
 addEvent(); // Adds even listeners to buttons
 joshBingo(); // Builds a bingo board for josh as default - Can be changed when cohort moves on
