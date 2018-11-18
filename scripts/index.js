@@ -4,8 +4,7 @@ const allDivs = bingoCanvas.querySelectorAll("div");
 let arrayBtnResponse = {
   josh: "n",
   dustin: "n",
-  other: "n",
-  shuffleNum: 0
+  other: "n"
 };
 let dustinPhrases = []; // To be updated when Dustin is our teacher
 let otherPhrases = []; // To be updated when we get other teachers
@@ -34,24 +33,23 @@ let joshPhrases = [
   { text: "Placeholder", selected: "n" },
   { text: "Placeholder", selected: "n" },
   { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
   { text: "Placeholder", selected: "n" }
 ];
 
 function getBingoText() {
-  return "Dude, this is really coming together";
-
-  arrayBtnResponse.shuffleNum = 0;
-  let num = Math.floor(Math.random() * 24) + 1 - arrayBtnResponse.shuffleCount;
-  if (num <= 0) {
-    num = 24;
-  }
+  let num = Math.ceil(Math.random() * 24);
   if (arrayBtnResponse.josh === "y") {
-    //================================== Stopped here last evening
-  } else if (arrayBtnResponse.dustin === "y") {
-  } else if (arrayBtnResponse.other === "y") {
+    for (joshIndex = num; joshIndex < 25; joshIndex++) {
+      //===================================================== Stopped working right here
+
+      if (joshPhrases[joshIndex].selected === "n") {
+        joshPhrases[joshIndex].selected = "y";
+        return joshPhrases[joshIndex].text;
+      }
+    }
   }
 }
-
 function turnSpaceGray() {
   const spaces = document.querySelectorAll(".bingo-space");
   spaces.forEach(space => {
@@ -60,24 +58,22 @@ function turnSpaceGray() {
         space.style.backgroundColor = "white";
       } else {
         space.style.backgroundColor = "lightgray";
-        console.log("Dude.");
       }
     });
   });
 }
 function makeBingoCanvas() {
   // 25 for 25 divs (5 * 5) for bingo spaces
-  for (i = 0; i < 25; i++) {
+  for (let spaceNum = 0; spaceNum < 25; spaceNum++) {
     let newSpace = document.createElement("div");
     let insideText = document.createElement("div");
     newSpace.classList.add("bingo-space");
     bingoCanvas.appendChild(newSpace);
     insideText.classList.add("bingo-text");
-    insideText.classList.add("space" + (i + 1));
+    insideText.classList.add("space" + (spaceNum + 1));
     insideText.innerHTML = getBingoText();
     newSpace.appendChild(insideText);
   }
-
   turnSpaceGray();
 }
 function joshBingo() {
