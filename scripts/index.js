@@ -6,38 +6,42 @@ let arrayBtnResponse = {
   dustin: "n",
   other: "n"
 };
-const joshPhrases = {
-  phrases: [
-    "BIG BOSS",
-    "Isn't that cool?",
-    "5 minute break",
-    "Breathin' room",
-    "It's in the training kit",
-    "border: 1px solid red;",
-    "Isn't that awesome guys?",
-    "Aha!",
-    "Extra cheese",
-    "Slap that there",
-    "Guys, this is SO POWERFUL.",
-    "Secret sauce",
-    "(Josh is wearing a Lambda hat)",
-    "(Any given spelling error)", // Do you think that we should put this in here?
-    "Isn't that crazy?",
-    "Mind-blowing (or any variation thereof)",
-    "Designers spent 20 hours...",
-    "Placeholder",
-    "Placeholder",
-    "Placeholder",
-    "Placeholder",
-    "Placeholder",
-    "Placeholder",
-    "Placeholder",
-    "Placeholder"
-  ]
-};
-const dustinPhrases = {}; // To be updated when Dustin is teaching us
+const joshPhrases = [
+  { text: "BIG BOSS", selected: "n" },
+  { text: "Isn't that cool?", selected: "n" },
+  { text: "5 minute break", selected: "n" },
+  { text: "Breathin' room", selected: "n" },
+  { text: "It's in the training kit", selected: "n" },
+  { text: "border: 1px solid red;", selected: "n" },
+  { text: "Isn't that awesome guys?", selected: "n" },
+  { text: "Aha!", selected: "n" },
+  { text: "Extra cheese", selected: "n" },
+  { text: "Slap that there", selected: "n" },
+  { text: "Guys, this is SO POWERFUL.", selected: "n" },
+  { text: "Secret sauce", selected: "n" },
+  { text: "(Josh is wearing a Lambda hat)", selected: "n" },
+  { text: "(Any given spelling error)", selected: "n" }, // Do you think that we should put this in here?
+  { text: "Isn't that crazy?", selected: "n" },
+  { text: "Mind-blowing (or any variation thereof)", selected: "n" },
+  { text: "Designers spent 20 hours...", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" },
+  { text: "Placeholder", selected: "n" }
+];
+const dustinPhrases = []; // To be updated when Dustin is our teacher
+const otherPhrases = []; // To be updated when we get other teachers
 
-function newBingoCanvas() {
+function getBingoText() {
+  let arrNum = Math.floor(Math.random() * 24) + 1;
+  console.log(arrNum);
+}
+
+function makeBingoCanvas() {
   // 25 for 25 divs (5 * 5) for bingo spaces
   for (i = 0; i < 25; i++) {
     let newSpace = document.createElement("div");
@@ -49,11 +53,9 @@ function newBingoCanvas() {
     insideText.classList.add("space" + (i + 1));
     newSpace.appendChild(insideText);
 
-    document.getElementsByClassName("space" + (i + 1)).innerHTML = function() {
-      if ((arrayBtnResponse.josh = "y")) {
-        // Stopped working here for the evening
-      }
-    };
+    document.getElementsByClassName(
+      "space" + (i + 1)
+    ).innerHTML = getBingoText();
   }
 }
 
@@ -63,7 +65,7 @@ function joshBingo() {
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";
-  newBingoCanvas();
+  makeBingoCanvas();
 }
 
 function dustinBingo() {
@@ -90,5 +92,5 @@ function addEvent() {
   });
 }
 
-addEvent();
-joshBingo();
+addEvent(); // Adds even listeners to buttons
+joshBingo(); // Builds a bingo board for josh as default - Can be changed when cohort moves on
