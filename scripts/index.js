@@ -1,10 +1,10 @@
 const buttons = document.querySelectorAll("input");
-const bingoCanvas = document.querySelectorAll(".bingo-canvas");
+const bingoCanvas = document.querySelector(".bingo-canvas");
 const allDivs = bingoCanvas.querySelectorAll("div");
-const day = function() {
-  // To be updated
-  // Will be used to varify if it's Sunday so that the banjo emoji will be placed somewhere in the grid
-};
+// const day = function() {
+//   // To be updated
+//   // Will be used to varify if it's Sunday so that the banjo emoji will be placed somewhere in the grid
+// };
 
 let arrayBtnResponse = {
   josh: "y",
@@ -42,40 +42,39 @@ const joshPhrases = {
   ]
 };
 
-const dustinPhrases = {};
+// const dustinPhrases = {};
 
 // Add in draw canvas function once created
 function joshBingo() {
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";
-  alert("working!");
 }
 
 // To be updated as class goes on
 function dustinBingo() {
-  return alert("That feature will be added once Dustin starts teaching.");
+  alert("That feature will be added once Dustin starts teaching.");
 }
 
 // To be updated as class goes on
 function otherBingo() {
-  return alert("That feature will be added once we get more instructors.");
+  alert("That feature will be added once we get more instructors.");
 }
 
-function newBingoCanvas() {
-  // to be updated with creation of new canvas
-}
+// function newBingoCanvas() {
+//   // to be updated with creation of new canvas
+// }
 
 buttons.forEach(input => {
   input.addEventListener("click", () => {
     if (input.value === "Josh") {
       joshBingo();
-    } else if (input.value === "Dustin") {
+    }
+    if (input.value === "Dustin") {
       dustinBingo();
-    } else if (input.value === "Other") {
+    }
+    if (input.value === "Other") {
       otherBingo();
-    } else {
-      console.log("Something went wrong.");
     }
   });
 });
