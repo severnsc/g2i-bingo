@@ -175,3 +175,39 @@ img {
   width: 20%;
   padding-bottom: 20%;
 }
+header {
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  background-color: #96001c;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: baseline;
+}
+header h1 {
+  font-size: 4rem;
+  margin-top: 1%;
+  margin-left: 15%;
+}
+header .nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+header .btn {
+  align-items: baseline;
+  color: #cb808e;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 30px;
+  width: 50px;
+  background-color: white;
+  font-family: Futura, Helvetica, sans-serif;
+}
+header .btn:hover {
+  background-color: #cb808e;
+  color: #96001c;
+}
