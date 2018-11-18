@@ -3,8 +3,17 @@
   .center(row, center, flex-start, nowrap);
 
   .bingo-content {
-    width: 50%;
+    width: 60%;
+    max-width: 700px;
     margin-top: 150px;
+
+    @media @tablet {
+      width: 80%;
+    }
+
+    @media @mobile {
+      width: 95%;
+    }
 
     .border();
 

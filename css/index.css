@@ -153,7 +153,8 @@ img {
   flex-wrap: nowrap;
 }
 .container .bingo-content {
-  width: 50%;
+  width: 60%;
+  max-width: 700px;
   margin-top: 150px;
   border: 1px solid black;
   display: flex;
@@ -161,6 +162,16 @@ img {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
+}
+@media (max-width: 800px) {
+  .container .bingo-content {
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .container .bingo-content {
+    width: 95%;
+  }
 }
 .container .bingo-content .bingo-canvas {
   width: 100%;
