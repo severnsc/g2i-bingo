@@ -40,11 +40,29 @@ let joshPhrases = [
 function getBingoText() {
   arrayBtnResponse.shuffleNum = 0;
   let num = Math.floor(Math.random() * 24) + 1 - arrayBtnResponse.shuffleCount;
+  if (num <= 0) {
+    num = 24;
+  }
+
   if (arrayBtnResponse.josh === "y") {
-    console.log(joshPhrases[num].text);
+    //================================== Stopped here last evening
   } else if (arrayBtnResponse.dustin === "y") {
   } else if (arrayBtnResponse.other === "y") {
   }
+}
+
+function spaceListeners() {
+  const spaces = document.querySelectorAll(".bingo-space");
+  spaces.forEach(space => {
+    space.addEventListener("click", () => {
+      if (space.style.backgroundColor === "gray") {
+        space.style.backgroundColor = "white";
+      } else {
+        space.style.backgroundColor = "gray";
+        console.log("Dude.");
+      }
+    });
+  });
 }
 
 function makeBingoCanvas() {
@@ -63,7 +81,10 @@ function makeBingoCanvas() {
       "space" + (i + 1)
     ).innerHTML = getBingoText();
   }
+
+  spaceListeners();
 }
+
 function joshBingo() {
   if (arrayBtnResponse.josh === "y") return;
 
@@ -72,12 +93,15 @@ function joshBingo() {
   arrayBtnResponse.other = "n";
   makeBingoCanvas();
 }
+
 function dustinBingo() {
   alert("That feature will be added once Dustin starts teaching.");
 }
+
 function otherBingo() {
   alert("That feature will be added once we get more instructors.");
 }
+
 function addEvent() {
   buttons.forEach(input => {
     input.addEventListener("click", () => {
@@ -93,5 +117,6 @@ function addEvent() {
     });
   });
 }
+
 addEvent(); // Adds even listeners to buttons
 joshBingo(); // Builds a bingo board for josh as default - Can be changed when cohort moves on

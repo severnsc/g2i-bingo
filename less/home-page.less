@@ -6,14 +6,11 @@
     width: 100%;
     max-width: 500px;
     margin-top: 150px;
+    .center(row, center, flex-start, nowrap);
 
     @media @tablet {
       width: 90%;
     }
-
-    .border();
-
-    .center(row, center, flex-start, nowrap);
 
     .bingo-canvas {
       width: 100%;
@@ -21,14 +18,13 @@
       .center(row, flex-start, flex-start, wrap);
 
       .bingo-space {
-        .border();
         width: 20%;
         padding-bottom: 20%;
         position: relative;
-        background: lighten(@athens-gray, 8%);
         .center(row, center, center, wrap);
 
         .bingo-text {
+          .border();
           position: absolute;
           top: 0;
           left: 0;
@@ -36,6 +32,7 @@
           width: 100%;
           height: 100%;
           font-size: 1.2rem;
+          background: white;
         }
       }
     }
