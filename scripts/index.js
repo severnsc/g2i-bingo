@@ -3,7 +3,7 @@ const bingoCanvas = document.querySelector(".bingo-canvas");
 const allDivs = bingoCanvas.querySelectorAll("div");
 
 let arrayBtnResponse = {
-  josh: "y",
+  josh: "n",
   dustin: "n",
   other: "n"
 };
@@ -58,6 +58,8 @@ function newBingoCanvas() {
 }
 
 function joshBingo() {
+  if (arrayBtnResponse.josh === "y") return;
+
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";
@@ -65,16 +67,10 @@ function joshBingo() {
 }
 
 function dustinBingo() {
-  arrayBtnResponse.josh = "n";
-  arrayBtnResponse.dustin = "y";
-  arrayBtnResponse.other = "n";
   alert("That feature will be added once Dustin starts teaching.");
 }
 
 function otherBingo() {
-  arrayBtnResponse.josh = "n";
-  arrayBtnResponse.dustin = "n";
-  arrayBtnResponse.other = "y";
   alert("That feature will be added once we get more instructors.");
 }
 
