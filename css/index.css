@@ -208,14 +208,17 @@ img {
   height: 100%;
   font-size: 1.6rem;
 }
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text p {
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .container .bingo-content .bingo-canvas .bingo-space .bingo-text p {
+    font-size: 1.15rem;
+  }
+}
 .container .bingo-content .bingo-canvas .bingo-space .bingo-text .cheese-image {
   height: auto;
-  max-width: 5.5vw;
-}
-@media (max-width: 800px) {
-  .container .bingo-content .bingo-canvas .bingo-space .bingo-text .cheese-image {
-    width: 10vw;
-  }
+  width: 50%;
 }
 @media (max-width: 500px) {
   .container .bingo-content .bingo-canvas .bingo-space .bingo-text {

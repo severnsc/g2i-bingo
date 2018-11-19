@@ -15,7 +15,7 @@ let joshPhrases = [
   { text: '"5 minute break"', selected: "n" },
   { text: '"Breathin\' room"', selected: "n" },
   { text: '"It\'s in the training kit"', selected: "n" },
-  { text: "border: 1px solid red;", selected: "n" },
+  { text: "border: 1px solid (any-color); ", selected: "n" },
   { text: '"Isn\'t that awesome guys?"', selected: "n" },
   { text: '"Aha!"', selected: "n" },
   { text: '"Extra cheese"', selected: "n" },
@@ -70,21 +70,20 @@ function makeBingoCanvas() {
     let newSpace = document.createElement("div");
     newSpace.classList.add("bingo-space");
     bingoCanvas.appendChild(newSpace);
-
     let insideText = document.createElement("div");
     insideText.classList.add("bingo-text");
     insideText.classList.add("space" + (spaceNum + 1));
-
     if (spaceNum + 1 === 13) {
       let cheeseImage = document.createElement("img");
+      let freeSpaceText = document.createElement("p");
       cheeseImage.setAttribute("src", "./images/cheese-wedge.png");
       cheeseImage.setAttribute("alt", "Cheese wedge emoji");
       cheeseImage.classList.add("cheese-image");
-
       insideText.appendChild(cheeseImage);
+      insideText.appendChild(freeSpaceText);
+      // insideText.style.backgroundColor = "lightgray";
       newSpace.appendChild(insideText);
-
-      // insideText.innerHTML = "Free Space";
+      freeSpaceText.innerHTML = "Free Space";
     } else {
       insideText.innerHTML = getBingoText();
       newSpace.appendChild(insideText);

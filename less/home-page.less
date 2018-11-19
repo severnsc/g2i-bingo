@@ -39,13 +39,17 @@
           height: 100%;
           font-size: 1.6rem;
 
+          p {
+            font-size: 1.6rem;
+
+            @media @mobile {
+              font-size: 1.15rem;
+            }
+          }
+
           .cheese-image {
             height: auto;
-            max-width: 5.5vw;
-
-            @media @tablet {
-              width: 10vw;
-            }
+            width: 50%;
           }
 
           @media @mobile {
