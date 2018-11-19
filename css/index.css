@@ -236,17 +236,17 @@ header h3 {
 header .nav-bar {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-right: 2%;
   align-items: baseline;
   font-family: Arial, Helvetica, sans-serif;
 }
 header .button-container {
   width: 50%;
-  margin-left: 13%;
+  margin-left: 25%;
 }
 header .github-links {
-  width: 35%;
+  width: 25%;
   font-size: 1.4rem;
   color: #cb808e;
   display: flex;
@@ -256,6 +256,9 @@ header .github-links a {
   text-decoration: none;
   color: #cb808e;
   font-family: Arial, Helvetica, sans-serif;
+}
+header .github-links a:hover {
+  text-decoration: underline;
 }
 header .btn {
   align-items: baseline;

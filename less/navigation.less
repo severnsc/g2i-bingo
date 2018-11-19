@@ -23,7 +23,7 @@ header {
   .nav-bar {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-right: 2%;
     align-items: baseline;
     font-family: @nav-font-type;
@@ -31,12 +31,12 @@ header {
 
   .button-container {
       width: 50%;
-      margin-left: 13%;
+      margin-left: 25%;
 
   }
 
   .github-links {
-      width: 35%;
+      width: 25%;
       font-size: 1.4rem;
       color: @nav-text;
       display: flex;
@@ -46,6 +46,10 @@ header {
           text-decoration: none;
           color: @nav-text;
           font-family: @nav-font-type;
+
+        &:hover {
+            text-decoration: underline;
+        }
       }
   }
 
