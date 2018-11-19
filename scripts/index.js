@@ -68,17 +68,27 @@ function makeBingoCanvas() {
   // 25 for 25 divs (5 * 5) for bingo spaces
   for (let spaceNum = 0; spaceNum < 25; spaceNum++) {
     let newSpace = document.createElement("div");
-    let insideText = document.createElement("div");
     newSpace.classList.add("bingo-space");
     bingoCanvas.appendChild(newSpace);
+
+    let insideText = document.createElement("div");
     insideText.classList.add("bingo-text");
     insideText.classList.add("space" + (spaceNum + 1));
+
     if (spaceNum + 1 === 13) {
-      insideText.innerHTML = "Free Space";
+      let cheeseImage = document.createElement("img");
+      cheeseImage.setAttribute("src", "./images/cheese-wedge.png");
+      cheeseImage.setAttribute("alt", "Cheese wedge emoji");
+      cheeseImage.classList.add("cheese-image");
+
+      insideText.appendChild(cheeseImage);
+      newSpace.appendChild(insideText);
+
+      // insideText.innerHTML = "Free Space";
     } else {
       insideText.innerHTML = getBingoText();
+      newSpace.appendChild(insideText);
     }
-    newSpace.appendChild(insideText);
   }
   turnSpaceGray();
 }

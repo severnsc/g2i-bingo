@@ -208,6 +208,10 @@ img {
   height: 100%;
   font-size: 1.6rem;
 }
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text .cheese-image {
+  height: auto;
+  width: 5vw;
+}
 @media (max-width: 500px) {
   .container .bingo-content .bingo-canvas .bingo-space .bingo-text {
     font-size: 1.4rem;
