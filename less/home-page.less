@@ -30,7 +30,7 @@
 
         .bingo-text {
           position: absolute;
-          .center(row, center, center, wrap);
+          .center(column, center, center, wrap);
           padding: 0 3%;
           top: 0;
           left: 0;
@@ -41,11 +41,15 @@
 
           .cheese-image {
             height: auto;
-            width: 5vw;
+            max-width: 5.5vw;
+
+            @media @tablet {
+              width: 10vw;
+            }
           }
 
           @media @mobile {
-            font-size: 1.4rem;
+            font-size: 1.15rem;
           }
         }
       }
