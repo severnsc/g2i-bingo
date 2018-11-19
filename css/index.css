@@ -216,9 +216,12 @@ img {
     font-size: 1.15rem;
   }
 }
-.container .bingo-content .bingo-canvas .bingo-space .bingo-text .cheese-image {
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text .space-image {
   height: auto;
   width: 50%;
+}
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text .banjo-image {
+  width: 85%;
 }
 @media (max-width: 500px) {
   .container .bingo-content .bingo-canvas .bingo-space .bingo-text {

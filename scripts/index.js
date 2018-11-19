@@ -13,7 +13,7 @@ let joshPhrases = [
   { text: '"Big Boss"' },
   { text: '"Isn\'t that cool?"' },
   { text: '"5 minute break"' },
-  { text: '"Breathin\' room"', selected: "n" },
+  { text: '"Breathin\' room"' },
   { text: '"It\'s in the training kit"' },
   { text: "border: 1px solid (any-color); " },
   { text: '"Isn\'t that awesome guys?"' },
@@ -33,12 +33,15 @@ let joshPhrases = [
   { text: '"Placeholder"' },
   { text: '"Placeholder"' },
   { text: '"Placeholder"' },
-  { text: '"Placeholder"' },
   { text: '"Placeholder"' }
 ];
-
 function createRandomArray() {
+  const day = new Date().getDay();
   randomArray = [];
+  if (day === 5) {
+    // change to Friday (5) when it's working
+    randomArray.push({ text: "" });
+  }
   for (let joshIndex = 0; joshIndex < joshPhrases.length; joshIndex++) {
     randomArray.push(joshPhrases[joshIndex]);
   }
@@ -78,7 +81,7 @@ function makeBingoCanvas() {
       let freeSpaceText = document.createElement("p");
       cheeseImage.setAttribute("src", "./images/cheese-wedge.png");
       cheeseImage.setAttribute("alt", "Cheese wedge emoji");
-      cheeseImage.classList.add("cheese-image");
+      cheeseImage.classList.add("space-image");
       insideText.appendChild(cheeseImage);
       insideText.appendChild(freeSpaceText);
       // insideText.style.backgroundColor = "lightgray";
@@ -86,6 +89,14 @@ function makeBingoCanvas() {
       freeSpaceText.innerHTML = "Free Space";
     } else {
       insideText.innerHTML = getBingoText();
+      if (insideText.innerHTML === "") {
+        insideText.innerHTML === " ";
+        let banjoImage = document.createElement("img");
+        banjoImage.setAttribute("src", "./images/banjo.png");
+        banjoImage.setAttribute("alt", "Banjo emoji");
+        banjoImage.classList.add("banjo-image");
+        insideText.appendChild(banjoImage);
+      }
       newSpace.appendChild(insideText);
     }
   }
