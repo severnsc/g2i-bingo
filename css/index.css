@@ -226,15 +226,36 @@ header {
 header h1 {
   font-size: 4rem;
   margin-top: 1%;
-  margin-left: 15%;
+  margin-left: 5%;
   color: #cb808e;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header h3 {
   font-family: Arial, Helvetica, sans-serif;
 }
 header .nav-bar {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-right: 2%;
+  align-items: baseline;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header .button-container {
+  width: 50%;
+  margin-left: 13%;
+}
+header .github-links {
+  width: 35%;
+  font-size: 1.4rem;
+  color: #cb808e;
+  display: flex;
+  justify-content: space-around;
+}
+header .github-links a {
+  text-decoration: none;
+  color: #cb808e;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header .btn {
   align-items: baseline;
@@ -264,7 +285,6 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: fixed;
   left: 0;
   bottom: 0;
 }
