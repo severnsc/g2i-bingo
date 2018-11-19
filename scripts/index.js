@@ -10,31 +10,31 @@ let randomArray = [];
 let dustinPhrases = []; // To be updated when Dustin is our teacher
 let otherPhrases = []; // To be updated when we get other teachers
 let joshPhrases = [
-  { text: '"Big Boss"', selected: "n" },
-  { text: '"Isn\'t that cool?"', selected: "n" },
-  { text: '"5 minute break"', selected: "n" },
+  { text: '"Big Boss"' },
+  { text: '"Isn\'t that cool?"' },
+  { text: '"5 minute break"' },
   { text: '"Breathin\' room"', selected: "n" },
-  { text: '"It\'s in the training kit"', selected: "n" },
-  { text: "border: 1px solid (any-color); ", selected: "n" },
-  { text: '"Isn\'t that awesome guys?"', selected: "n" },
-  { text: '"Aha!"', selected: "n" },
-  { text: '"Extra cheese"', selected: "n" },
-  { text: '"Slap that there"', selected: "n" },
-  { text: '"Guys, this is SO POWERFUL."', selected: "n" },
-  { text: '"Secret sauce"', selected: "n" },
-  { text: "(Josh is wearing a Lambda hat)", selected: "n" },
-  { text: "(Any given spelling error)", selected: "n" }, // Do you think that we should put this in here?
-  { text: '"Isn\'t that crazy?"', selected: "n" },
-  { text: '"Mind-blowing" (or any variation thereof)', selected: "n" },
-  { text: '"Designers spent 20 hours..."', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" },
-  { text: '"Placeholder"', selected: "n" }
+  { text: '"It\'s in the training kit"' },
+  { text: "border: 1px solid (any-color); " },
+  { text: '"Isn\'t that awesome guys?"' },
+  { text: '"Aha!"' },
+  { text: '"Extra cheese"' },
+  { text: '"Slap that there"' },
+  { text: '"Guys, this is SO POWERFUL."' },
+  { text: '"Secret sauce"' },
+  { text: "(Josh is wearing a Lambda hat)" },
+  { text: "(Any given spelling error)" }, // Do you think that we should put this in here?
+  { text: '"Isn\'t that crazy?"' },
+  { text: '"Mind-blowing" (or any variation thereof)' },
+  { text: '"Designers spent 20 hours..."' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' },
+  { text: '"Placeholder"' }
 ];
 
 function createRandomArray() {
@@ -120,4 +120,4 @@ function listenNavBtns() {
   });
 }
 listenNavBtns(); // Adds even listeners to buttons
-joshBingo(); // Builds a bingo board for josh as default - Can be changed when cohort moves on
+joshBingo(); // Builds a bingo board for Josh as default - Can be changed when cohort moves on
