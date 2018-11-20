@@ -259,6 +259,7 @@ header .github-links a {
 }
 header .github-links a:hover {
   text-decoration: underline;
+  color: white;
 }
 header .btn {
   align-items: baseline;

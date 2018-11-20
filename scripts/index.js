@@ -26,7 +26,7 @@ let joshPhrases = [
   { text: "Isn't that crazy?", selected: "n" },
   { text: "Mind-blowing (or any variation thereof)", selected: "n" },
   { text: "Designers spent 20 hours...", selected: "n" },
-  { text: "Placeholder", selected: "n" },
+  { text: "Banjo", selected: "n" },
   { text: "Placeholder", selected: "n" },
   { text: "Placeholder", selected: "n" },
   { text: "Placeholder", selected: "n" },
