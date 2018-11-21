@@ -27,8 +27,8 @@ let joshPhrases = [
   { text: '"Isn\'t that crazy?"' },
   { text: '"Mind-blowing" (or any variation thereof)' },
   { text: '"Designers spent 20 hours..."' },
-  { text: '"Placeholder"' },
-  { text: '"Placeholder"' },
+  { text: "TRBL" },
+  { text: '"Show me in the comments section..."' },
   { text: '"Placeholder"' },
   { text: '"Placeholder"' },
   { text: '"Placeholder"' },
@@ -39,7 +39,6 @@ function createRandomArray() {
   const day = new Date().getDay();
   randomArray = [];
   if (day === 5) {
-    // change to Friday (5) when it's working
     randomArray.push({ text: "" });
   }
   for (let joshIndex = 0; joshIndex < joshPhrases.length; joshIndex++) {
