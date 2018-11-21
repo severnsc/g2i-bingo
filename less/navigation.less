@@ -11,9 +11,13 @@ header {
   h1 {
     font-size: 4rem;
     margin-top: 1%;
-    margin-left: 15%;
+    margin-left: 5%;
     color: @nav-text;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: @nav-font-type;
+  }
+
+  h3 {
+      font-family: @nav-font-type;
   }
 
   .nav-bar {
@@ -21,6 +25,33 @@ header {
     display: flex;
     justify-content: space-evenly;
     margin-right: 2%;
+    align-items: baseline;
+    font-family: @nav-font-type;
+  }
+
+  .button-container {
+      width: 50%;
+      margin-left: 25%;
+
+  }
+
+  .github-links {
+      width: 25%;
+      font-size: 1.4rem;
+      color: @nav-text;
+      display: flex;
+      justify-content: space-around;
+
+      a {
+          text-decoration: none;
+          color: @nav-text;
+          font-family: @nav-font-type;
+
+        &:hover {
+            text-decoration: underline;
+            color: white;
+        }
+      }
   }
 
   .btn {
