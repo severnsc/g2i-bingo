@@ -30,7 +30,7 @@
 
         .bingo-text {
           position: absolute;
-          .center(row, center, center, wrap);
+          .center(column, center, center, wrap);
           padding: 0 3%;
           top: 0;
           left: 0;
@@ -39,8 +39,25 @@
           height: 100%;
           font-size: 1.6rem;
 
+          p {
+            font-size: 1.6rem;
+
+            @media @mobile {
+              font-size: 1.15rem;
+            }
+          }
+
+          .space-image {
+            height: auto;
+            width: 50%;
+          }
+
+          .banjo-image {
+            width: 85%;
+          }
+
           @media @mobile {
-            font-size: 1.4rem;
+            font-size: 1.15rem;
           }
         }
       }

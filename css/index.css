@@ -196,7 +196,7 @@ img {
 .container .bingo-content .bingo-canvas .bingo-space .bingo-text {
   position: absolute;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -208,9 +208,24 @@ img {
   height: 100%;
   font-size: 1.6rem;
 }
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text p {
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .container .bingo-content .bingo-canvas .bingo-space .bingo-text p {
+    font-size: 1.15rem;
+  }
+}
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text .space-image {
+  height: auto;
+  width: 50%;
+}
+.container .bingo-content .bingo-canvas .bingo-space .bingo-text .banjo-image {
+  width: 85%;
+}
 @media (max-width: 500px) {
   .container .bingo-content .bingo-canvas .bingo-space .bingo-text {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
   }
 }
 header {
@@ -272,6 +287,10 @@ header .btn {
   width: 20%;
   background-color: #96001c;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 header .btn:focus {
   outline-width: 0;
