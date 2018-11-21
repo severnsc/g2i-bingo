@@ -29,8 +29,8 @@ let joshPhrases = [
   { text: '"Designers spent 20 hours..."' },
   { text: "TRBL" },
   { text: '"Show me in the comments section..."' },
-  { text: '"Placeholder"' },
-  { text: '"Placeholder"' },
+  { text: '"Let\'s take a poll..."' },
+  { text: '"Alright, welcome FSW16 to (topic), day (number)."' },
   { text: '"Placeholder"' },
   { text: '"Placeholder"' },
   { text: '"Placeholder"' }
