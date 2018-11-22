@@ -10,18 +10,41 @@ header {
 
   h1 {
     font-size: 4rem;
+    width: 20%;
     margin-top: 1%;
-    margin-left: 15%;
+    margin-left: 5%;
     color: @nav-text;
     font-family: Arial, Helvetica, sans-serif;
   }
 
   .nav-bar {
-    width: 100%;
+    width: 50%;
     display: flex;
-    justify-content: space-evenly;
-    margin-right: 2%;
+    justify-content: space-around;
   }
+
+  // GitHub Link Code
+
+  .github-links {
+    display: flex;
+    width: 25%;
+    font-size: 1.4rem;
+    justify-content: space-evenly;
+
+    a {
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      color: @nav-text;
+
+      &:hover {
+        color: white;
+      }
+
+      img {
+        margin-left: 30%
+      }
+    }
+}
 
   .btn {
     align-items: baseline;
@@ -48,5 +71,6 @@ header {
     &:hover {
       color: white;
     }
-  }
+    }
+
 }
