@@ -158,7 +158,7 @@ img {
 .container .bingo-content {
   width: 100%;
   max-width: 600px;
-  margin-top: 92px;
+  margin-top: 88px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -267,6 +267,12 @@ header .github-links a:hover {
 }
 header .github-links a img {
   margin-left: 30%;
+}
+header .github-links a .github-name {
+  color: black;
+}
+header .github-links a .github-name:hover {
+  color: #cb808e;
 }
 header .btn {
   align-items: baseline;
