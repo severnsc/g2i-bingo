@@ -4,6 +4,10 @@
   position: fixed;
   background-color: @nav-bg;
 
+  @media @mobile {
+    height: 170px;
+  }
+
   .nav-container {
     height: 100%;
     display: flex;
@@ -41,6 +45,11 @@
     margin: 1%;
     padding-top: 0.5%;
 
+    @media @mobile {
+      .center(column, flex-start, center, nowrap);
+      .border();
+    }
+
     a {
       text-decoration: none;
       font-family: Arial, Helvetica, sans-serif;
@@ -51,7 +60,7 @@
       }
 
       img {
-        margin-left: 30%
+        margin-left: 30%;
       }
 
       .github-name {
@@ -62,7 +71,7 @@
         }
       }
     }
-}
+  }
 
   .btn {
     align-items: baseline;
@@ -89,6 +98,5 @@
     &:hover {
       color: white;
     }
-    }
-
+  }
 }
