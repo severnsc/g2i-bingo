@@ -256,6 +256,7 @@ header .github-links {
   width: 25%;
   font-size: 1.4rem;
   justify-content: space-evenly;
+  margin: 1%;
 }
 header .github-links a {
   text-decoration: none;
