@@ -16,11 +16,13 @@
     }
   }
 
-  .page-title { // page-title = FSW16 aka h1
-    font-size: 4rem;
-    margin-left: 5%;
-    color: @nav-text;
-    font-family: Arial, Helvetica, sans-serif;
+  .page-title {
+    // Moved this styling to the global h1
+
+    @media @mobile {
+      // For your h1
+    }
+   
   }
 
   .nav-buttons {
@@ -37,6 +39,7 @@
     font-size: 1.4rem;
     justify-content: space-evenly;
     margin: 1%;
+    padding-top: 0.5%;
 
     a {
       text-decoration: none;

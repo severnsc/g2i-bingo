@@ -132,6 +132,12 @@ table {
 html {
   font-size: 62.5%;
 }
+h1 {
+  font-size: 4rem;
+  margin-left: 5%;
+  color: #cb808e;
+  font-family: Arial, Helvetica, sans-serif;
+}
 p {
   font-size: 1.6rem;
 }
@@ -242,11 +248,7 @@ img {
 }
 @media (max-width: 500px) {
 }
-.main-navigation .page-title {
-  font-size: 4rem;
-  margin-left: 5%;
-  color: #cb808e;
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 500px) {
 }
 .main-navigation .nav-buttons {
   width: 50%;
@@ -259,6 +261,7 @@ img {
   font-size: 1.4rem;
   justify-content: space-evenly;
   margin: 1%;
+  padding-top: 0.5%;
 }
 .main-navigation .github-links a {
   text-decoration: none;
