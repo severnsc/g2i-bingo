@@ -23,7 +23,7 @@ let joshPhrases = [
   { text: '"Guys, this is SO POWERFUL."' },
   { text: '"Secret sauce"' },
   { text: "(Josh is wearing a Lambda hat)" },
-  { text: "(Any given spelling error)" }, // Do you think that we should put this in here?
+  { text: "(Any given spelling error)" },
   { text: '"Isn\'t that crazy?"' },
   { text: '"Mind-blowing" (or any variation thereof)' },
   { text: '"Designers spent 20 hours..."' },
@@ -83,7 +83,6 @@ function makeBingoCanvas() {
       cheeseImage.classList.add("space-image");
       insideText.appendChild(cheeseImage);
       insideText.appendChild(freeSpaceText);
-      // insideText.style.backgroundColor = "lightgray";
       newSpace.appendChild(insideText);
       freeSpaceText.innerHTML = "Free Space";
     } else {
