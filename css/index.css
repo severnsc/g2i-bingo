@@ -228,54 +228,56 @@ img {
     font-size: 1.15rem;
   }
 }
-header {
+.main-navigation {
   width: 100%;
-  height: 75px;
+  height: 80px;
   position: fixed;
   background-color: #96001c;
-  display: flex;
-  color: white;
-  justify-content: center;
-  align-items: baseline;
 }
-header h1 {
+.main-navigation .nav-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+}
+.main-navigation .page-title {
   font-size: 4rem;
-  width: 20%;
-  margin-top: 1%;
   margin-left: 5%;
   color: #cb808e;
   font-family: Arial, Helvetica, sans-serif;
 }
-header .nav-bar {
+.main-navigation .nav-buttons {
   width: 50%;
   display: flex;
   justify-content: space-around;
 }
-header .github-links {
+.main-navigation .github-links {
   display: flex;
   width: 25%;
   font-size: 1.4rem;
   justify-content: space-evenly;
   margin: 1%;
 }
-header .github-links a {
+.main-navigation .github-links a {
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: #cb808e;
 }
-header .github-links a:hover {
+.main-navigation .github-links a:hover {
   color: white;
 }
-header .github-links a img {
+.main-navigation .github-links a img {
   margin-left: 30%;
 }
-header .github-links a .github-name {
+.main-navigation .github-links a .github-name {
   color: black;
 }
-header .github-links a .github-name:hover {
+.main-navigation .github-links a .github-name:hover {
   color: #cb808e;
 }
-header .btn {
+.main-navigation .btn {
   align-items: baseline;
   color: #cb808e;
   font-size: 2rem;
@@ -291,10 +293,10 @@ header .btn {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-header .btn:focus {
+.main-navigation .btn:focus {
   outline-width: 0;
 }
-header .btn:hover {
+.main-navigation .btn:hover {
   color: white;
 }
 footer {
