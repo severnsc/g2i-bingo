@@ -254,6 +254,7 @@ img {
   width: 50%;
   display: flex;
   justify-content: space-around;
+  margin-left: 11%;
 }
 .main-navigation .github-links {
   display: flex;
