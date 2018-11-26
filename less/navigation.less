@@ -4,6 +4,10 @@
   position: fixed;
   background-color: @nav-bg;
 
+  @media @mobile {
+    height: 160px;
+  }
+
   .nav-container {
     height: 100%;
     display: flex;
@@ -13,14 +17,29 @@
     justify-content: space-between;
     margin: 0 auto;
 
+    @media @mobile {
+      margin-top: 10px;
+      .center(column, flex-start, center, nowrap);
+    }
+
     .logo-links {
       width: 100%;
       display: flex;
       justify-content: flex-start;
       align-content: baseline;
 
-      .page-title {
+      @media @mobile {
+        .center(column, center, flex-start, nowrap);
+      }
 
+      .page-title {
+        margin-left: 5%;
+
+        @media @mobile {
+          width: 100%;
+          text-align: center;
+          margin: 0;
+        }
       }
 
       .nav-buttons {
@@ -28,7 +47,12 @@
         justify-content: space-evenly;
         width: 100%;
         margin-left: 13%;
-        
+
+        @media @mobile {
+          .center(row, flex-start, flex-start, nowrap);
+          margin-left: 0;
+        }
+
         .btn {
           align-items: baseline;
           color: @nav-text;
@@ -40,99 +64,71 @@
           width: 20%;
           background-color: @nav-bg;
           font-family: Arial, Helvetica, sans-serif;
-      
+
           // Added to remove automatic rounded buttons styling on iOS Safari/mobile view
           -webkit-appearance: none;
           -webkit-border-radius: 0;
           -moz-border-radius: 0;
           border-radius: 0;
-      
+
           &:focus {
             outline-width: 0;
           }
-      
+
           &:hover {
             color: white;
           }
+
+          @media @mobile {
+            width: 100%;
           }
+        }
+      }
     }
-}
 
-  // GitHub Link Code
+    // GitHub Link Code
 
-  .github-links {
-    width: 31%;
+    .github-links {
+      width: 31%;
 
-    .name-tags {
-    display: flex;
-    font-size: 1.4rem;
-    justify-content: space-evenly;
-    margin: 1%;
-    padding-top: 0.5%;
-
-    a {
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif;
-      color: @nav-text;
-
-      &:hover {
-        color: white;
+      @media @mobile {
+        width: 100%;
       }
 
-      img {
-        margin-left: 30%;
-      }
+      .name-tags {
+        display: flex;
+        font-size: 1.4rem;
+        justify-content: space-evenly;
+        margin: 1%;
+        padding-top: 0.5%;
 
-      .github-name {
-        color: black;
-
-        &:hover {
+        a {
+          text-decoration: none;
+          font-family: Arial, Helvetica, sans-serif;
           color: @nav-text;
+          .center(column, flex-start, center, nowrap);
+
+          &:hover {
+            color: white;
+          }
+
+          img {
+            margin-left: 30%;
+
+            @media @mobile {
+              margin: 0;
+            }
+          }
+
+          .github-name {
+            color: black;
+
+            &:hover {
+              color: @nav-text;
+            }
+          }
         }
       }
     }
   }
 }
-
-/*   .btn {
-    align-items: baseline;
-    color: @nav-text;
-    font-size: 2rem;
-    margin: 1%;
-    border: 2px @nav-bg;
-    border-radius: 10px;
-    height: 30px;
-    width: 20%;
-    background-color: @nav-bg;
-    font-family: Arial, Helvetica, sans-serif;
-
-    // Added to remove automatic rounded buttons styling on iOS Safari/mobile view
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-
-    &:focus {
-      outline-width: 0;
-    }
-
-    &:hover {
-      color: white;
-    }
-  } */
-}
-}
-
-// .main-navigation {
-  // .nav-container {
-    // max-width: 1440px;
-    //width: 100%;
-    // .logo-links {
-      // .page-title {}
-      // .nav-buttons {}
-    // }
-    // .github-links {
-      // a{}
-    // }
-  // }
-// }

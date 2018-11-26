@@ -2,13 +2,20 @@ footer {
   width: 100%;
   color: @shark;
   height: 50px;
-  font-size: 1.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   left: 0;
   bottom: 0;
+
+  p {
+    font-size: 1.6rem;
+
+    @media @mobile {
+      font-size: 1rem;
+    }
+  }
 
   .footer-nav {
     align-content: space-around;
