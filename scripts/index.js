@@ -102,7 +102,10 @@ function makeBingoCanvas() {
   turnSpaceGray();
 }
 function joshBingo() {
-  if (arrayBtnResponse.josh === "y") return;
+  if (arrayBtnResponse.josh === "y") {
+    alert("The game is already set up for Josh.");
+    return;
+  }
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";

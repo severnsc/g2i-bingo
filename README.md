@@ -2,7 +2,7 @@
 
 A bingo website designed for Lambda School Full Stack Web students.
 
-Please note that we are not reponsible for any banjo spaces that may (or may not) appear on Fridays. The banjo moves in mysterious ways.
+(Please note that we are not reponsible for any spaces that may (or may not) appear on Fridays. The banjo moves in mysterious ways.)
 
 ## Getting Started
 
