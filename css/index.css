@@ -176,6 +176,7 @@ img {
 }
 @media (max-width: 800px) {
   .container .bingo-content {
+    margin-top: 100px;
     width: 97%;
   }
 }
@@ -244,6 +245,11 @@ img {
   position: fixed;
   background-color: #96001c;
 }
+@media (max-width: 800px) {
+  .main-navigation {
+    height: 90px;
+  }
+}
 @media (max-width: 500px) {
   .main-navigation {
     height: 160px;
@@ -257,6 +263,16 @@ img {
   width: 100%;
   justify-content: space-between;
   margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .main-navigation .nav-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container {
@@ -273,6 +289,15 @@ img {
   display: flex;
   justify-content: flex-start;
   align-content: baseline;
+}
+@media (max-width: 800px) {
+  .main-navigation .nav-container .logo-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-links {
@@ -298,6 +323,16 @@ img {
   justify-content: space-evenly;
   width: 100%;
   margin-left: 13%;
+}
+@media (max-width: 800px) {
+  .main-navigation .nav-container .logo-links .nav-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin: 0;
+  }
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-links .nav-buttons {
@@ -331,6 +366,12 @@ img {
 .main-navigation .nav-container .logo-links .nav-buttons .btn:hover {
   color: white;
 }
+@media (max-width: 800px) {
+  .main-navigation .nav-container .logo-links .nav-buttons .btn {
+    margin: 0;
+    width: 21%;
+  }
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-links .nav-buttons .btn {
     width: 100%;
@@ -338,6 +379,12 @@ img {
 }
 .main-navigation .nav-container .github-links {
   width: 31%;
+}
+@media (max-width: 800px) {
+  .main-navigation .nav-container .github-links {
+    width: 60%;
+    margin-top: 16px;
+  }
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .github-links {
@@ -363,14 +410,6 @@ img {
 }
 .main-navigation .nav-container .github-links .name-tags a:hover {
   color: white;
-}
-.main-navigation .nav-container .github-links .name-tags a img {
-  margin-left: 30%;
-}
-@media (max-width: 500px) {
-  .main-navigation .nav-container .github-links .name-tags a img {
-    margin: 0;
-  }
 }
 .main-navigation .nav-container .github-links .name-tags a .github-name {
   color: black;

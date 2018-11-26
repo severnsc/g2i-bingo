@@ -4,6 +4,10 @@
   position: fixed;
   background-color: @nav-bg;
 
+  @media @tablet {
+    height: 90px;
+  }
+
   @media @mobile {
     height: 160px;
   }
@@ -17,6 +21,11 @@
     justify-content: space-between;
     margin: 0 auto;
 
+    @media @tablet {
+      margin-top: 10px;
+      .center(row, space-between, flex-start, nowrap);
+    }
+
     @media @mobile {
       margin-top: 10px;
       .center(column, flex-start, center, nowrap);
@@ -27,6 +36,10 @@
       display: flex;
       justify-content: flex-start;
       align-content: baseline;
+
+      @media @tablet {
+        .center(column, flex-start, flex-start, nowrap);
+      }
 
       @media @mobile {
         .center(column, center, flex-start, nowrap);
@@ -47,6 +60,11 @@
         justify-content: space-evenly;
         width: 100%;
         margin-left: 13%;
+
+        @media @tablet {
+          .center(row, flex-start, flex-start, nowrap);
+          margin: 0;
+        }
 
         @media @mobile {
           .center(row, flex-start, flex-start, nowrap);
@@ -79,6 +97,11 @@
             color: white;
           }
 
+          @media @tablet {
+            margin: 0;
+            width: 21%;
+          }
+
           @media @mobile {
             width: 100%;
           }
@@ -90,6 +113,11 @@
 
     .github-links {
       width: 31%;
+
+      @media @tablet {
+        width: 60%;
+        margin-top: 16px;
+      }
 
       @media @mobile {
         width: 100%;
@@ -110,14 +138,6 @@
 
           &:hover {
             color: white;
-          }
-
-          img {
-            margin-left: 30%;
-
-            @media @mobile {
-              margin: 0;
-            }
           }
 
           .github-name {
