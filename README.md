@@ -28,6 +28,7 @@ A bingo website designed for Lambda School Full Stack Web students.
 
 ## Acknowledgments
 
-- Thanks to [Josh Knell](https://github.com/BigKnell) for the inspiration. Thanks for your banjo.
-- Thanks to Lambda School. If we weren't enrolled we would never have met the teachers we tease herein.
+- Thanks to [Josh Knell](https://github.com/BigKnell) for the inspiration. 
+- Thanks to the banjo, the true wind beneath our wings.
+- Thanks to Lambda School. If we weren't enrolled we would never have met the teachers we tease herein. Please don't kick us out.
 - Thanks to the inventor of Bingo. I don't know what kind of website we would have made if we didn't have Bingo.
