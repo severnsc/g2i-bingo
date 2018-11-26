@@ -4,10 +4,6 @@
   position: fixed;
   background-color: @nav-bg;
 
-  @media @mobile {
-    height: 170px;
-  }
-
   .nav-container {
     height: 100%;
     display: flex;
@@ -44,11 +40,6 @@
     justify-content: space-evenly;
     margin: 1%;
     padding-top: 0.5%;
-
-    @media @mobile {
-      .center(column, flex-start, center, nowrap);
-      .border();
-    }
 
     a {
       text-decoration: none;

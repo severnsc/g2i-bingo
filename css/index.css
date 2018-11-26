@@ -245,11 +245,6 @@ img {
   position: fixed;
   background-color: #96001c;
 }
-@media (max-width: 500px) {
-  .main-navigation {
-    height: 170px;
-  }
-}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -273,16 +268,6 @@ img {
   justify-content: space-evenly;
   margin: 1%;
   padding-top: 0.5%;
-}
-@media (max-width: 500px) {
-  .main-navigation .github-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-    border: 1px solid black;
-  }
 }
 .main-navigation .github-links a {
   text-decoration: none;
