@@ -249,26 +249,37 @@ img {
   height: 100%;
   display: flex;
   align-items: center;
+  max-width: 1440px;
+  width: 100%;
   justify-content: space-between;
+  margin: 0 auto;
 }
-@media (max-width: 500px) {
-}
-@media (max-width: 500px) {
-}
-.main-navigation .nav-buttons {
-  width: 50%;
+.main-navigation .nav-container .logo-links {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-left: 11%;
+  justify-content: flex-start;
+  align-content: baseline;
 }
-.main-navigation .github-links {
+.main-navigation .nav-container .logo-links .nav-buttons {
   display: flex;
-  width: 25%;
-  font-size: 1.4rem;
   justify-content: space-evenly;
-  margin: 1%;
+  width: 100%;
+  margin-left: 13%;
   padding-top: 0.5%;
 }
+<<<<<<< HEAD
+=======
+/* @media (max-width: 500px) {
+  .main-navigation .github-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+  }
+}
+>>>>>>> 2298a3e5586517343a2cbf07311d780265c9cf61
 .main-navigation .github-links a {
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -285,8 +296,8 @@ img {
 }
 .main-navigation .github-links a .github-name:hover {
   color: #cb808e;
-}
-.main-navigation .btn {
+} */
+.main-navigation .nav-container .logo-links .nav-buttons .btn {
   align-items: baseline;
   color: #cb808e;
   font-size: 2rem;
@@ -302,11 +313,38 @@ img {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-.main-navigation .btn:focus {
+.main-navigation .nav-container .logo-links .nav-buttons .btn:focus {
   outline-width: 0;
 }
-.main-navigation .btn:hover {
+.main-navigation .nav-container .logo-links .nav-buttons .btn:hover {
   color: white;
+}
+.main-navigation .nav-container .github-links {
+  width: 31%;
+}
+.main-navigation .nav-container .github-links .name-tags {
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-evenly;
+  margin: 1%;
+  padding-top: 0.5%;
+}
+.main-navigation .nav-container .github-links .name-tags a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #cb808e;
+}
+.main-navigation .nav-container .github-links .name-tags a:hover {
+  color: white;
+}
+.main-navigation .nav-container .github-links .name-tags a img {
+  margin-left: 30%;
+}
+.main-navigation .nav-container .github-links .name-tags a .github-name {
+  color: black;
+}
+.main-navigation .nav-container .github-links .name-tags a .github-name:hover {
+  color: #cb808e;
 }
 footer {
   width: 100%;

@@ -8,34 +8,63 @@
     height: 100%;
     display: flex;
     align-items: center;
+    max-width: 1440px;
+    width: 100%;
     justify-content: space-between;
+    margin: 0 auto;
 
-    @media @mobile {
-      // .nav-container controls all the child elements
-      // Do you think we should make it tablet-navigable as well? Can totally push that to a later date, though.
+    .logo-links {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-content: baseline;
+
+      .page-title {
+
+      }
+
+      .nav-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-left: 13%;
+        
+        .btn {
+          align-items: baseline;
+          color: @nav-text;
+          font-size: 2rem;
+          margin: 1%;
+          border: 2px @nav-bg;
+          border-radius: 10px;
+          height: 30px;
+          width: 20%;
+          background-color: @nav-bg;
+          font-family: Arial, Helvetica, sans-serif;
+      
+          // Added to remove automatic rounded buttons styling on iOS Safari/mobile view
+          -webkit-appearance: none;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          border-radius: 0;
+      
+          &:focus {
+            outline-width: 0;
+          }
+      
+          &:hover {
+            color: white;
+          }
+          }
     }
-  }
-
-  .page-title {
-    // Moved this styling to the global h1
-
-    @media @mobile {
-      // For your h1
-    }
-  }
-
-  .nav-buttons {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 11%;
-  }
+}
 
   // GitHub Link Code
 
   .github-links {
+    width: 31%;
+
+    .name-tags {
     display: flex;
-    width: 25%;
     font-size: 1.4rem;
     justify-content: space-evenly;
     margin: 1%;
@@ -63,8 +92,9 @@
       }
     }
   }
+}
 
-  .btn {
+/*   .btn {
     align-items: baseline;
     color: @nav-text;
     font-size: 2rem;
@@ -89,5 +119,20 @@
     &:hover {
       color: white;
     }
-  }
+  } */
 }
+}
+
+// .main-navigation {
+  // .nav-container {
+    // max-width: 1440px;
+    //width: 100%;
+    // .logo-links {
+      // .page-title {}
+      // .nav-buttons {}
+    // }
+    // .github-links {
+      // a{}
+    // }
+  // }
+// }
