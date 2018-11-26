@@ -34,7 +34,8 @@ let joshPhrases = [
   { text: '"Start recording!"' },
   { text: "(Drops codepen in comments section)" },
   { text: "(Drops a resource link in Slack channel)" },
-  { text: '"Welcome back"' }
+  { text: '"Welcome back"' },
+  { text: '"Fingers on keyboards..."' }
 ];
 function createRandomArray() {
   const day = new Date().getDay();
