@@ -180,6 +180,11 @@ img {
     width: 97%;
   }
 }
+@media (max-width: 500px) {
+  .container .bingo-content {
+    margin-top: 210px;
+  }
+}
 .container .bingo-content .bingo-canvas {
   width: 100%;
   display: flex;
@@ -240,6 +245,11 @@ img {
   position: fixed;
   background-color: #96001c;
 }
+@media (max-width: 500px) {
+  .main-navigation {
+    height: 170px;
+  }
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -260,7 +270,35 @@ img {
   justify-content: space-evenly;
   width: 100%;
   margin-left: 13%;
+  padding-top: 0.5%;
 }
+/* @media (max-width: 500px) {
+  .main-navigation .github-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+  }
+}
+.main-navigation .github-links a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #cb808e;
+}
+.main-navigation .github-links a:hover {
+  color: white;
+}
+.main-navigation .github-links a img {
+  margin-left: 30%;
+}
+.main-navigation .github-links a .github-name {
+  color: black;
+}
+.main-navigation .github-links a .github-name:hover {
+  color: #cb808e;
+} */
 .main-navigation .nav-container .logo-links .nav-buttons .btn {
   align-items: baseline;
   color: #cb808e;
