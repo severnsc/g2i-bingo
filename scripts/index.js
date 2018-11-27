@@ -41,7 +41,11 @@ let joshPhrases = [
   { text: '"I\'ll disown you"' },
   { text: 'Any reference to "the next developer"' },
   { text: '"Pro tip!"' },
-  { text: '"In the wild"' }
+  { text: '"In the wild"' },
+  { text: '"Banana"' },
+  { text: 'Draw tool is used' },
+  { text: '"Under the hood"' },
+  { text: '(Dad cough' }
 ];
 function createRandomArray() {
   const day = new Date().getDay();
