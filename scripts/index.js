@@ -37,8 +37,7 @@ let joshPhrases = [
   { text: '"Welcome back"' },
   { text: '"Fingers on keyboards"' }, // New addition - Christie, let me know what you think of everything below (and including) this line
   { text: '"Zeroeth"' },
-  { text: '(Googles "MDN" + something)' },
-  { text: '"Pro tip"' }
+  { text: '(Googles "MDN" + something)' }
 ];
 function createRandomArray() {
   const day = new Date().getDay();
