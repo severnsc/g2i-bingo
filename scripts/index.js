@@ -45,7 +45,8 @@ let joshPhrases = [
   { text: '"Banana"' },
   { text: 'Draw tool is used' },
   { text: '"Under the hood"' },
-  { text: '(Dad cough' }
+  { text: '(Dad cough)' },
+  { text: '"Mind yer loggers!"' }
 ];
 function createRandomArray() {
   const day = new Date().getDay();
