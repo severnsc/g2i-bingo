@@ -130,8 +130,8 @@ function joshBingo() {
 function dustinBingo() {
   alert("That feature will be added once Dustin starts teaching.");
 }
-function otherBingo() {
-  alert("That feature will be added once we get more instructors.");
+function luisBingo() {
+  alert("That feature will be added once Luis starts teaching.");
 }
 (function listenNavBtns() {
   buttons.forEach(input => {
@@ -142,8 +142,8 @@ function otherBingo() {
       if (input.value === "Dustin") {
         dustinBingo();
       }
-      if (input.value === "Other") {
-        otherBingo();
+      if (input.value === "Luis") {
+        luisBingo();
       }
     });
   });
