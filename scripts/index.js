@@ -10,11 +10,8 @@ let arrayBtnResponse = {
 let randomArray = [];
 let dustinPhrases = [
   { text: '"K?"' },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
+  { text: '"Typing is hard."' },
+  { text: '(Hums) "Do, do do..."' },
   { text: "Placeholder" },
   { text: "Placeholder" },
   { text: "Placeholder" },
@@ -82,11 +79,23 @@ let joshPhrases = [
 function createRandomArray() {
   const day = new Date().getDay();
   randomArray = [];
-  if (day === 5) {
-    randomArray.push({ text: "" });
+  if (arrayBtnResponse.josh === "y") {
+    if (day === 5) {
+      randomArray.push({ text: "" });
+    }
   }
-  for (let joshIndex = 0; joshIndex < joshPhrases.length; joshIndex++) {
-    randomArray.push(joshPhrases[joshIndex]);
+  if (arrayBtnResponse.josh === "y") {
+    for (let joshIndex = 0; joshIndex < joshPhrases.length; joshIndex++) {
+      randomArray.push(joshPhrases[joshIndex]);
+    }
+  } else if (arrayBtnResponse.dustin === "y") {
+    for (
+      let dustinIndex = 0;
+      dustinIndex < dustinPhrases.length;
+      dustinIndex++
+    ) {
+      randomArray.push(dustinPhrases[dustinIndex]);
+    }
   }
 }
 function getBingoText() {
@@ -122,12 +131,17 @@ function makeBingoCanvas() {
     insideText.classList.add("bingo-text");
     insideText.classList.add("space" + (spaceNum + 1));
     if (spaceNum + 1 === 13) {
-      let cheeseImage = document.createElement("img");
+      let freeSpaceImage = document.createElement("img");
+      freeSpaceImage.classList.add("space-image");
       let freeSpaceText = document.createElement("p");
-      cheeseImage.setAttribute("src", "./images/cheese-wedge.png");
-      cheeseImage.setAttribute("alt", "Cheese wedge emoji");
-      cheeseImage.classList.add("space-image");
-      insideText.appendChild(cheeseImage);
+      if (arrayBtnResponse.josh === "y") {
+        freeSpaceImage.setAttribute("alt", "Cheese wedge emoji");
+        freeSpaceImage.setAttribute("src", "./images/cheese-wedge.png");
+      } else if (arrayBtnResponse.dustin === "y") {
+        freeSpaceImage.setAttribute("alt", "Hogwarts Crest");
+        freeSpaceImage.setAttribute("src", "./images/hogwarts-crest.png");
+      }
+      insideText.appendChild(freeSpaceImage);
       insideText.appendChild(freeSpaceText);
       newSpace.appendChild(insideText);
       freeSpaceText.innerHTML = "Free Space";
@@ -146,18 +160,33 @@ function makeBingoCanvas() {
   }
   turnSpaceGray();
 }
+function resetBoard() {
+  randomArray = [];
+  document
+    .querySelectorAll(".bingo-space")
+    .forEach(space => bingoCanvas.removeChild(space));
+}
 function joshBingo() {
   if (arrayBtnResponse.josh === "y") {
     alert("The game is already set up for Josh.");
     return;
   }
+  resetBoard();
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
   arrayBtnResponse.other = "n";
   makeBingoCanvas();
 }
 function dustinBingo() {
-  alert("That feature will be added once Dustin starts teaching.");
+  if (arrayBtnResponse.dustin === "y") {
+    alert("The game is already set up for Dustin.");
+    return;
+  }
+  resetBoard();
+  arrayBtnResponse.josh = "n";
+  arrayBtnResponse.dustin = "y";
+  arrayBtnResponse.other = "n";
+  makeBingoCanvas();
 }
 function luisBingo() {
   alert("That feature will be added once Luis starts teaching.");
@@ -285,4 +314,4 @@ function checkBingo() {
   checkHorizontalBingo();
   checkDiagonalBingo();
 }
-joshBingo(); // Builds a bingo board for Josh as default - Can be changed when cohort moves on
+joshBingo(); // Builds a bingo board for Dustin as default - Can be changed when cohort moves on
