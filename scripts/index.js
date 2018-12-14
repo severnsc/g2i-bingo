@@ -8,7 +8,36 @@ let arrayBtnResponse = {
   other: "n"
 };
 let randomArray = [];
-let dustinPhrases = []; // To be updated when Dustin is our teacher
+let dustinPhrases = [
+  { text: '"K?"' },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" },
+  { text: "Placeholder" }
+];
 let otherPhrases = []; // To be updated when we get other teachers
 let joshPhrases = [
   { text: '"Big Boss"' },
