@@ -16,7 +16,7 @@ const dustinPhrases = [
   { text: "(Makes Harry Potter reference)" },
   { text: "(Makes Marvel reference)" },
   { text: "(Makes Lord of the Rings reference)" },
-  { text: "Placeholder" },
+  { text: '"{num} of points to the Hogwarts house of your choice"' },
   { text: "Placeholder" },
   { text: "Placeholder" },
   { text: "Placeholder" },
