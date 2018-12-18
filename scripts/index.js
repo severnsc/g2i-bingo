@@ -5,16 +5,17 @@ const shadedColor = "lightgray";
 let arrayBtnResponse = {
   josh: "n",
   dustin: "n",
-  other: "n"
+  luis: "n"
 };
 let randomArray = [];
-let dustinPhrases = [
+const luisPhrases = []; // To be updated when we get other teachers
+const dustinPhrases = [
   { text: '"K?"' },
   { text: '"Typing is hard."' },
   { text: '(Hums) "Do, do do..."' },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
+  { text: "(Makes Harry Potter reference)" },
+  { text: "(Makes Marvel reference)" },
+  { text: "(Makes Lord of the Rings reference)" },
   { text: "Placeholder" },
   { text: "Placeholder" },
   { text: "Placeholder" },
@@ -35,8 +36,7 @@ let dustinPhrases = [
   { text: "Placeholder" },
   { text: "Placeholder" }
 ];
-let otherPhrases = []; // To be updated when we get other teachers
-let joshPhrases = [
+const joshPhrases = [
   { text: '"Big Boss"' },
   { text: '"Isn\'t that cool?"' },
   { text: '"5 minute break"' },
@@ -62,7 +62,7 @@ let joshPhrases = [
   { text: "(Drops codepen in comments section)" },
   { text: "(Drops a resource link in Slack channel)" },
   { text: '"Welcome back"' },
-  { text: '"Fingers on keyboards"' }, // New addition - Christie, let me know what you think of everything below (and including) this line
+  { text: '"Fingers on keyboards"' },
   { text: '"Zeroeth"' },
   { text: '(Googles "MDN" + something)' },
   { text: '"I\'ll disown you"' },
@@ -96,6 +96,10 @@ function createRandomArray() {
     ) {
       randomArray.push(dustinPhrases[dustinIndex]);
     }
+  } else if ((arrayBtnResponse.luis = "y")) {
+    for (let luisIndex = 0; luisIndex < luisPhrases.length; luisIndex++) {
+      randomArray.push(luisPhrases[luisIndex]);
+    }
   }
 }
 function getBingoText() {
@@ -121,6 +125,7 @@ function turnSpaceGray() {
 }
 function makeBingoCanvas() {
   createRandomArray();
+
   // 25 for 25 divs (5 * 5) for bingo spaces
   for (let spaceNum = 0; spaceNum < 25; spaceNum++) {
     let newSpace = document.createElement("div");
@@ -130,10 +135,12 @@ function makeBingoCanvas() {
     let insideText = document.createElement("div");
     insideText.classList.add("bingo-text");
     insideText.classList.add("space" + (spaceNum + 1));
+
     if (spaceNum + 1 === 13) {
       let freeSpaceImage = document.createElement("img");
       freeSpaceImage.classList.add("space-image");
       let freeSpaceText = document.createElement("p");
+
       if (arrayBtnResponse.josh === "y") {
         freeSpaceImage.setAttribute("alt", "Cheese wedge emoji");
         freeSpaceImage.setAttribute("src", "./images/cheese-wedge.png");
@@ -141,12 +148,14 @@ function makeBingoCanvas() {
         freeSpaceImage.setAttribute("alt", "Hogwarts Crest");
         freeSpaceImage.setAttribute("src", "./images/hogwarts-crest.png");
       }
+
       insideText.appendChild(freeSpaceImage);
       insideText.appendChild(freeSpaceText);
       newSpace.appendChild(insideText);
       freeSpaceText.innerHTML = "Free Space";
     } else {
       insideText.innerHTML = getBingoText();
+
       if (insideText.innerHTML === "") {
         insideText.innerHTML === " ";
         let banjoImage = document.createElement("img");
@@ -174,7 +183,7 @@ function joshBingo() {
   resetBoard();
   arrayBtnResponse.josh = "y";
   arrayBtnResponse.dustin = "n";
-  arrayBtnResponse.other = "n";
+  arrayBtnResponse.luis = "n";
   makeBingoCanvas();
 }
 function dustinBingo() {
@@ -185,7 +194,7 @@ function dustinBingo() {
   resetBoard();
   arrayBtnResponse.josh = "n";
   arrayBtnResponse.dustin = "y";
-  arrayBtnResponse.other = "n";
+  arrayBtnResponse.luis = "n";
   makeBingoCanvas();
 }
 function luisBingo() {
@@ -314,4 +323,4 @@ function checkBingo() {
   checkHorizontalBingo();
   checkDiagonalBingo();
 }
-joshBingo(); // Builds a bingo board for Dustin as default - Can be changed when cohort moves on
+dustinBingo(); // Builds a bingo board for Dustin as default - Can be changed when cohort moves on
