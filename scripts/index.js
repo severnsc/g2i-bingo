@@ -17,7 +17,7 @@ const dustinPhrases = [
   { text: "(Makes Marvel reference)" },
   { text: "(Makes Lord of the Rings reference)" },
   { text: '"{num} of points to the Hogwarts house of your choice"' },
-  { text: "Placeholder" },
+  { text: "(Plays \"It's working\" Star Wars clip)" },
   { text: "Placeholder" },
   { text: "Placeholder" },
   { text: "Placeholder" },
