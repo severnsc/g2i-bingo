@@ -1,8 +1,8 @@
-# FSW16 Bingo
+# WEB16 Bingo
 
 A bingo website designed for Lambda School's Full Stack Web Engineering students.
 
-(Please note that we are not reponsible for any spaces that may (or may not) appear on Fridays. The banjo moves in mysterious ways.)
+(Please note that we are not reponsible for any spaces that may (or may not) appear on Fridays for Josh. The banjo moves in mysterious ways.)
 
 ## Getting Started
 
