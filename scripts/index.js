@@ -20,7 +20,7 @@ const dustinPhrases = [
   { text: '(Plays "It\'s working!" Star Wars clip)' },
   { text: '"Woo-hoo!!!"' },
   { text: '"Hooray!"' },
-  { text: "Easy peasy, lemon squeezy!" },
+  { text: "Placeholder" }, // Needs to be replaced
   { text: "(References Gryffindor)" },
   { text: '"We\'re so good at life!"' },
   { text: '"Curses"' },
@@ -31,9 +31,9 @@ const dustinPhrases = [
   { text: "(Any given spelling error)" },
   { text: "(Drops CodeSandbox in comments section)" },
   { text: "(References official React documentation)" },
-  { text: "Placeholder" },
-  { text: "Placeholder" },
-  { text: "Placeholder" }
+  { text: "(Wearing Star Wars Shirt)" },
+  { text: "(App breaks)" },
+  { text: '"Foobar/Banana"' }
 ];
 const joshPhrases = [
   { text: '"Big Boss"' },
