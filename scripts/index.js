@@ -20,7 +20,7 @@ const dustinPhrases = [
   { text: '(Plays "It\'s working!" Star Wars clip)' },
   { text: '"Woo-hoo!!!"' },
   { text: '"Hooray!"' },
-  { text: "Placeholder" }, // Needs to be replaced
+  { text: '"Neato!"' },
   { text: "(References Gryffindor)" },
   { text: '"We\'re so good at life!"' },
   { text: '"Curses"' },
