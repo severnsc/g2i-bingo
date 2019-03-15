@@ -160,6 +160,9 @@ function makeBingoCanvas() {
       } else if (arrayBtnResponse.dustin === "y") {
         freeSpaceImage.setAttribute("alt", "Hogwarts Crest");
         freeSpaceImage.setAttribute("src", "./images/hogwarts-crest.png");
+      } else if (arrayBtnResponse.luis === "y") {
+        freeSpaceImage.setAttribute("alt", "The One Ring");
+        freeSpaceImage.setAttribute("src", "./images/oneRing.png");
       }
 
       insideText.appendChild(freeSpaceImage);
