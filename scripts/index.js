@@ -8,7 +8,21 @@ let arrayBtnResponse = {
   luis: "n"
 };
 let randomArray = [];
-const luisPhrases = []; // To be updated when we get other teachers
+const luisPhrases = [  
+  { text: 'Luis has his camera turned on' },
+{ text: 'Luis chuckles at Slack' },
+{ text: 'Luis asks for a volunteer to screenshare' },
+{ text: 'Troubleshoots a student\'s bug onscreen' },
+{ text: 'Asks for a volunteer to tell him what code to write' },
+{ text: 'Drops a code snippet in Slack' },
+{ text: 'Drops a resource in Slack' },
+{ text: '"Don\'t worry, be happy!"' },
+{ text: 'Any given LOTR reference' },
+{ text: 'We see code in Spanish' },
+{ text: 'Luis reads a Slack comment aloud' },
+{ text: 'Bad panda' },
+{ text: 'Luis tells us a secret'}
+]; 
 const dustinPhrases = [
   { text: '"K?"' },
   { text: '"Typing is hard."' },
