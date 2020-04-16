@@ -43,11 +43,11 @@ const g2iPhrases = [
   { text: "Tejas builds something over night" },
 ];
 
-function createRandomArray() {
-  const day = new Date().getDay();
+function createRandomArray(sourceArray, arrayLength) {
+  const shuffled = sourceArray.slice().sort((a, b) => 0.5 - Math.random());
   randomArray = [];
-  for (let idx = 0; idx < g2iPhrases.length; idx++) {
-    randomArray.push(g2iPhrases[idx]);
+  for (let idx = 0; idx < arrayLength; idx++) {
+    randomArray.push(shuffled[idx]);
   }
 }
 function getBingoText() {
@@ -72,7 +72,7 @@ function turnSpaceGray() {
   });
 }
 function makeBingoCanvas() {
-  createRandomArray();
+  createRandomArray(g2iPhrases, BINGO_SQUARES);
 
   // 25 for 25 divs (5 * 5) for bingo spaces
   const FREE_SPACE = 13;
