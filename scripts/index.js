@@ -5,94 +5,49 @@ const shadedColor = "lightgray";
 let arrayBtnResponse = {
   josh: "n",
   dustin: "n",
-  luis: "n"
+  luis: "n",
 };
 let randomArray = [];
-const luisPhrases = [  
-  { text: 'Luis has his camera turned on' },
-  { text: 'Luis chuckles at Slack' },
-  { text: 'Luis asks for a volunteer to screenshare' },
-  { text: 'Troubleshoots a student\'s bug onscreen' },
-  { text: 'Asks for a volunteer to tell him what code to write' },
-  { text: 'Drops a code snippet in Slack' },
-  { text: 'Drops a resource in Slack' },
-  { text: '"Don\'t worry, be happy!"' },
-  { text: 'Any given LOTR reference' },
-  { text: 'We see code in Spanish' },
-  { text: 'Luis reads a Slack comment aloud' },
-  { text: 'Bad panda' },
-  { text: 'Luis tells us a secret'},
-  { text: '"Bros"'},
-  { text: '"Homies"'},
-  { text: '"Squad"'},
-  { text: 'Plays feel-good or pump-up song during Sprint Challenge'},
-]; 
-const dustinPhrases = [
-  { text: '"K?"' },
-  { text: '"Typing is hard."' },
-  { text: '(Hums) "Do, do do..."' },
-  { text: "(Makes Harry Potter reference)" },
-  { text: "(Makes Marvel reference)" },
-  { text: "(Makes Lord of the Rings reference)" },
-  { text: '"(num) points to the Hogwarts house of your choice."' },
-  { text: '(Plays "It\'s working!" Star Wars clip)' },
-  { text: '"Woo-hoo!!!"' },
-  { text: '"Hooray!"' },
-  { text: '"Neato!"' },
-  { text: "(References Gryffindor)" },
-  { text: '"We\'re so good at life!"' },
-  { text: '"Curses"' },
-  { text: "(Plays pre-lecture music)" },
-  { text: "(Keeps annotating after intending to stop)" },
-  { text: '"Yay!"' },
-  { text: '"This is gonna blow your minds."' },
-  { text: "(Any given spelling error)" },
-  { text: "(Drops CodeSandbox in comments section)" },
-  { text: "(References official React documentation)" },
-  { text: "(Wearing Star Wars Shirt)" },
-  { text: "(App breaks)" },
-  { text: '"Foobar/Banana"' }
+
+const g2iPhrases = [
+  { text: "Stephen sends someone to the corner" },
+  { text: 'Chris says "fucking (any big word here)"' },
+  { text: "LeBrun references Harry Potter" },
+  { text: 'Rhona says "I haven\'t seen that movie" or "I fell asleep in it"' },
+  { text: "Christie makes a pun" },
+  { text: 'Devan asks, "Is there a Clubhouse ticket for that?"' },
+  { text: "Gabe makes a Loom video" },
+  { text: 'Chris says "I do what I want"' },
+  { text: "Someone talks about rock climbing" },
+  { text: 'Pariss or Stephen says "Word"' },
+  { text: "Someone gets caught day drinking" },
+  { text: "Gabe or Bryn react with a Heart emoji" },
+  { text: "Rhona or Chris react with raised-hands emoji" },
+  { text: "Dylan references Lord of the Rings" },
+  { text: "Lee creeps on a thread and then throws in his opinion" },
+  { text: "Lee sends a gif or meme" },
+  { text: 'Rhona says "I need to go to CrossFit"' },
+  { text: "Someone drops a Tweet in Slack" },
+  {
+    text:
+      "Any time a developer tells you something inappropriate or weird about their life",
+  },
+  { text: "First call of the day gets canceled" },
+  { text: "Christie doesn't get a reference #homeschooled" },
+  { text: "Stephen posts a bird picture" },
+  { text: "Chris Cap'n Crunch Meme" },
+  { text: "Dylan shows up for a niche conversation" },
+  { text: "LeBrun @channel's developer success team about anything" },
+  { text: "LeBrun cancels your subscription to a software product" },
+  { text: "Every time someone uses an Upvote emoji" },
+  { text: "Bryn does a dance (rain dance, React dance, dev dance...)" },
+  { text: 'Chris says "We can iterate on that"' },
+  { text: 'Pablo says "cool cool cool"' },
+  { text: "Stephen goes Fly Fishing" },
+  { text: "Tejas rejects a PR with over comments" },
+  { text: "Tejas builds something over night" },
 ];
-const joshPhrases = [
-  { text: '"Big Boss"' },
-  { text: '"Isn\'t that cool?"' },
-  { text: '"5 minute break"' },
-  { text: '"Breathin\' room"' },
-  { text: '"It\'s in the training kit"' },
-  { text: "border: 1px solid (any-color); " },
-  { text: '"Isn\'t that awesome guys?"' },
-  { text: '"Aha!"' },
-  { text: '"Extra cheese"' },
-  { text: '"Slap that there"' },
-  { text: '"Guys, this is SO POWERFUL."' },
-  { text: '"Secret sauce"' },
-  { text: "(Josh is wearing a Lambda hat)" },
-  { text: "(Any given spelling error)" },
-  { text: '"Isn\'t that crazy?"' },
-  { text: '"Mind-blowing" (or any variation thereof)' },
-  { text: '"Designers spent 20 hours..."' },
-  { text: "TRBL" },
-  { text: '"Show me in the comments section..."' },
-  { text: '"Let\'s take a poll..."' },
-  { text: '"Alright, welcome FSW16 to (topic), day (number)."' },
-  { text: '"Start recording!"' },
-  { text: "(Drops Codepen in comments section)" },
-  { text: "(Drops a resource link in Slack channel)" },
-  { text: '"Welcome back"' },
-  { text: '"Fingers on keyboards"' },
-  { text: '"Zeroeth"' },
-  { text: '(Googles "MDN" + something)' },
-  { text: '"I\'ll disown you"' },
-  { text: 'Any reference to "the next developer"' },
-  { text: '"Pro tip!"' },
-  { text: '"In the wild"' },
-  { text: '"Banana"' },
-  { text: "Draw tool is used" },
-  { text: '"Under the hood"' },
-  { text: "(Dad cough)" },
-  { text: '"Mind yer loggers!"' },
-  { text: '"Whoa."' }
-];
+
 function createRandomArray() {
   const day = new Date().getDay();
   randomArray = [];
@@ -106,12 +61,8 @@ function createRandomArray() {
       randomArray.push(joshPhrases[joshIndex]);
     }
   } else if (arrayBtnResponse.dustin === "y") {
-    for (
-      let dustinIndex = 0;
-      dustinIndex < dustinPhrases.length;
-      dustinIndex++
-    ) {
-      randomArray.push(dustinPhrases[dustinIndex]);
+    for (let dustinIndex = 0; dustinIndex < g2iPhrases.length; dustinIndex++) {
+      randomArray.push(g2iPhrases[dustinIndex]);
     }
   } else if ((arrayBtnResponse.luis = "y")) {
     for (let luisIndex = 0; luisIndex < luisPhrases.length; luisIndex++) {
@@ -129,7 +80,7 @@ function getBingoText() {
 }
 function turnSpaceGray() {
   const spaces = document.querySelectorAll(".bingo-space");
-  spaces.forEach(space => {
+  spaces.forEach((space) => {
     space.addEventListener("click", () => {
       if (space.style.backgroundColor === shadedColor) {
         space.style.backgroundColor = "white";
@@ -163,7 +114,7 @@ function makeBingoCanvas() {
         freeSpaceImage.setAttribute("src", "./images/cheese-wedge.png");
       } else if (arrayBtnResponse.dustin === "y") {
         freeSpaceImage.setAttribute("alt", "Hogwarts Crest");
-        freeSpaceImage.setAttribute("src", "./images/hogwarts-crest.png");
+        freeSpaceImage.setAttribute("src", "./images/g2iLogo.png");
       } else if (arrayBtnResponse.luis === "y") {
         freeSpaceImage.setAttribute("alt", "The One Ring");
         freeSpaceImage.setAttribute("src", "./images/oneRing.png");
@@ -193,7 +144,7 @@ function resetBoard() {
   randomArray = [];
   document
     .querySelectorAll(".bingo-space")
-    .forEach(space => bingoCanvas.removeChild(space));
+    .forEach((space) => bingoCanvas.removeChild(space));
 }
 function joshBingo() {
   if (arrayBtnResponse.josh === "y") {
@@ -221,7 +172,7 @@ function luisBingo() {
   alert("That feature will be added once Luis starts teaching.");
 }
 (function listenNavBtns() {
-  buttons.forEach(input => {
+  buttons.forEach((input) => {
     input.addEventListener("click", () => {
       if (input.value === "Josh") {
         joshBingo();
