@@ -50,19 +50,6 @@ function createRandomArray(sourceArray, arrayLength) {
   return randomArray;
 }
 
-function turnSpaceGray() {
-  const spaces = document.querySelectorAll(".bingo-space");
-  spaces.forEach((space) => {
-    space.addEventListener("click", () => {
-      if (space.style.backgroundColor === shadedColor) {
-        space.style.backgroundColor = "white";
-      } else {
-        space.style.backgroundColor = shadedColor;
-        checkBingo();
-      }
-    });
-  });
-}
 function makeBingoCanvas(phrases, squares) {
   let randomArray = createRandomArray(phrases, squares);
 
@@ -71,6 +58,14 @@ function makeBingoCanvas(phrases, squares) {
   const idxToSpaceNumber = (idx) => idx + 1;
   for (let idx = 0; idx < squares; idx++) {
     let newSpace = document.createElement("div");
+    newSpace.addEventListener("click", () => {
+      if (newSpace.style.backgroundColor === shadedColor) {
+        newSpace.style.backgroundColor = "white";
+      } else {
+        newSpace.style.backgroundColor = shadedColor;
+        checkBingo();
+      }
+    });
     newSpace.classList.add("bingo-space");
     newSpace.id = "box" + idx;
     bingoCanvas.appendChild(newSpace);
@@ -93,7 +88,6 @@ function makeBingoCanvas(phrases, squares) {
       newSpace.appendChild(insideText);
     }
   }
-  turnSpaceGray();
 }
 function resetBoard() {
   document
