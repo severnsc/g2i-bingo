@@ -1,7 +1,6 @@
 const bingoCanvas = document.querySelector(".bingo-canvas");
 const allDivs = bingoCanvas.querySelectorAll("div");
 const shadedColor = "lightgray";
-let randomArray = [];
 const BINGO_SQUARES = 25;
 
 const g2iPhrases = [
@@ -45,16 +44,16 @@ const g2iPhrases = [
 
 function createRandomArray(sourceArray, arrayLength) {
   const shuffled = sourceArray.slice().sort((a, b) => 0.5 - Math.random());
-  randomArray = [];
+  let randomArray = [];
   for (let idx = 0; idx < arrayLength; idx++) {
     randomArray.push(shuffled[idx]);
   }
+  return randomArray;
 }
-function getBingoText() {
+function getBingoText(randomArray) {
   if (randomArray.length > 0) {
     let index = Math.floor(Math.random() * randomArray.length);
     let spaceText = randomArray[index].text;
-    randomArray.splice(index, 1);
     return spaceText;
   }
 }
@@ -72,7 +71,7 @@ function turnSpaceGray() {
   });
 }
 function makeBingoCanvas() {
-  createRandomArray(g2iPhrases, BINGO_SQUARES);
+  let randomArray = createRandomArray(g2iPhrases, BINGO_SQUARES);
 
   // 25 for 25 divs (5 * 5) for bingo spaces
   const FREE_SPACE = 13;
@@ -98,8 +97,9 @@ function makeBingoCanvas() {
       newSpace.appendChild(insideText);
       freeSpaceText.innerHTML = "Free Space";
     } else {
-      insideText.innerHTML = getBingoText();
-
+      const bingoText = getBingoText(randomArray);
+      randomArray = randomArray.filter(({ text }) => text !== bingoText);
+      insideText.innerHTML = bingoText;
       newSpace.appendChild(insideText);
     }
   }
