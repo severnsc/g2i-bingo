@@ -1,5 +1,4 @@
 const bingoCanvas = document.querySelector(".bingo-canvas");
-const allDivs = bingoCanvas.querySelectorAll("div");
 const shadedColor = "lightgray";
 const BINGO_SQUARES = 25;
 
@@ -149,7 +148,6 @@ function checkVerticalBingo() {
   }
 }
 function checkHorizontalBingo() {
-  j = 0;
   for (var i = 0; i < 5; i++) {
     switch (i) {
       case 0:
@@ -217,4 +215,4 @@ function checkBingo() {
   checkHorizontalBingo();
   checkDiagonalBingo();
 }
-makeBingoCanvas(); // Builds a bingo board for Dustin as default - Can be changed when cohort moves on
+makeBingoCanvas();
