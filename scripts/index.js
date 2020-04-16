@@ -1,13 +1,8 @@
-const buttons = document.querySelectorAll("input");
 const bingoCanvas = document.querySelector(".bingo-canvas");
 const allDivs = bingoCanvas.querySelectorAll("div");
 const shadedColor = "lightgray";
-let arrayBtnResponse = {
-  josh: "n",
-  dustin: "n",
-  luis: "n",
-};
 let randomArray = [];
+const BINGO_SQUARES = 25;
 
 const g2iPhrases = [
   { text: "Stephen sends someone to the corner" },
@@ -51,23 +46,8 @@ const g2iPhrases = [
 function createRandomArray() {
   const day = new Date().getDay();
   randomArray = [];
-  if (arrayBtnResponse.josh === "y") {
-    if (day === 5) {
-      randomArray.push({ text: "" });
-    }
-  }
-  if (arrayBtnResponse.josh === "y") {
-    for (let joshIndex = 0; joshIndex < joshPhrases.length; joshIndex++) {
-      randomArray.push(joshPhrases[joshIndex]);
-    }
-  } else if (arrayBtnResponse.dustin === "y") {
-    for (let dustinIndex = 0; dustinIndex < g2iPhrases.length; dustinIndex++) {
-      randomArray.push(g2iPhrases[dustinIndex]);
-    }
-  } else if ((arrayBtnResponse.luis = "y")) {
-    for (let luisIndex = 0; luisIndex < luisPhrases.length; luisIndex++) {
-      randomArray.push(luisPhrases[luisIndex]);
-    }
+  for (let idx = 0; idx < g2iPhrases.length; idx++) {
+    randomArray.push(g2iPhrases[idx]);
   }
 }
 function getBingoText() {
@@ -95,30 +75,23 @@ function makeBingoCanvas() {
   createRandomArray();
 
   // 25 for 25 divs (5 * 5) for bingo spaces
-  for (let spaceNum = 0; spaceNum < 25; spaceNum++) {
+  const FREE_SPACE = 13;
+  const idxToSpaceNumber = (idx) => idx + 1;
+  for (let idx = 0; idx < BINGO_SQUARES; idx++) {
     let newSpace = document.createElement("div");
     newSpace.classList.add("bingo-space");
-    newSpace.id = "box" + spaceNum;
+    newSpace.id = "box" + idx;
     bingoCanvas.appendChild(newSpace);
     let insideText = document.createElement("div");
     insideText.classList.add("bingo-text");
-    insideText.classList.add("space" + (spaceNum + 1));
+    insideText.classList.add("space" + (idx + 1));
 
-    if (spaceNum + 1 === 13) {
+    if (idxToSpaceNumber(idx) === FREE_SPACE) {
       let freeSpaceImage = document.createElement("img");
       freeSpaceImage.classList.add("space-image");
       let freeSpaceText = document.createElement("p");
-
-      if (arrayBtnResponse.josh === "y") {
-        freeSpaceImage.setAttribute("alt", "Cheese wedge emoji");
-        freeSpaceImage.setAttribute("src", "./images/cheese-wedge.png");
-      } else if (arrayBtnResponse.dustin === "y") {
-        freeSpaceImage.setAttribute("alt", "Hogwarts Crest");
-        freeSpaceImage.setAttribute("src", "./images/g2iLogo.png");
-      } else if (arrayBtnResponse.luis === "y") {
-        freeSpaceImage.setAttribute("alt", "The One Ring");
-        freeSpaceImage.setAttribute("src", "./images/oneRing.png");
-      }
+      freeSpaceImage.setAttribute("alt", "G2i Logo");
+      freeSpaceImage.setAttribute("src", "./images/g2iLogo.png");
 
       insideText.appendChild(freeSpaceImage);
       insideText.appendChild(freeSpaceText);
@@ -127,14 +100,6 @@ function makeBingoCanvas() {
     } else {
       insideText.innerHTML = getBingoText();
 
-      if (insideText.innerHTML === "") {
-        insideText.innerHTML === " ";
-        let banjoImage = document.createElement("img");
-        banjoImage.setAttribute("src", "./images/banjo.png");
-        banjoImage.setAttribute("alt", "Banjo emoji");
-        banjoImage.classList.add("banjo-image");
-        insideText.appendChild(banjoImage);
-      }
       newSpace.appendChild(insideText);
     }
   }
@@ -145,47 +110,9 @@ function resetBoard() {
   document
     .querySelectorAll(".bingo-space")
     .forEach((space) => bingoCanvas.removeChild(space));
-}
-function joshBingo() {
-  if (arrayBtnResponse.josh === "y") {
-    alert("The game is already set up for Josh.");
-    return;
-  }
-  resetBoard();
-  arrayBtnResponse.josh = "y";
-  arrayBtnResponse.dustin = "n";
-  arrayBtnResponse.luis = "n";
   makeBingoCanvas();
 }
-function dustinBingo() {
-  if (arrayBtnResponse.dustin === "y") {
-    alert("The game is already set up for Dustin.");
-    return;
-  }
-  resetBoard();
-  arrayBtnResponse.josh = "n";
-  arrayBtnResponse.dustin = "y";
-  arrayBtnResponse.luis = "n";
-  makeBingoCanvas();
-}
-function luisBingo() {
-  alert("That feature will be added once Luis starts teaching.");
-}
-(function listenNavBtns() {
-  buttons.forEach((input) => {
-    input.addEventListener("click", () => {
-      if (input.value === "Josh") {
-        joshBingo();
-      }
-      if (input.value === "Dustin") {
-        dustinBingo();
-      }
-      if (input.value === "Luis") {
-        luisBingo();
-      }
-    });
-  });
-})();
+
 function gotABingo(sq1, sq2, sq3, sq4, sq5) {
   sq1.style.backgroundColor = "yellow";
   sq2.style.backgroundColor = "yellow";
@@ -294,4 +221,4 @@ function checkBingo() {
   checkHorizontalBingo();
   checkDiagonalBingo();
 }
-dustinBingo(); // Builds a bingo board for Dustin as default - Can be changed when cohort moves on
+makeBingoCanvas(); // Builds a bingo board for Dustin as default - Can be changed when cohort moves on
