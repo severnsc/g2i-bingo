@@ -438,3 +438,8 @@ footer p {
 footer .footer-nav {
   align-content: space-around;
 }
+#winner {
+  z-index: 999;
+  position: absolute;
+  top: 30%;
+}

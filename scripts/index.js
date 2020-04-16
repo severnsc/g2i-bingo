@@ -85,7 +85,6 @@ function makeBingoCanvas() {
       let freeSpaceText = document.createElement("p");
       freeSpaceImage.setAttribute("alt", "G2i Logo");
       freeSpaceImage.setAttribute("src", "./images/g2iLogo.png");
-
       insideText.appendChild(freeSpaceImage);
       insideText.appendChild(freeSpaceText);
       newSpace.appendChild(insideText);
@@ -98,10 +97,10 @@ function makeBingoCanvas() {
   turnSpaceGray();
 }
 function resetBoard() {
-  randomArray = [];
   document
     .querySelectorAll(".bingo-space")
     .forEach((space) => bingoCanvas.removeChild(space));
+  document.getElementById("winner").remove();
   makeBingoCanvas();
 }
 
@@ -111,7 +110,12 @@ function gotABingo(sq1, sq2, sq3, sq4, sq5) {
   sq3.style.backgroundColor = "yellow";
   sq4.style.backgroundColor = "yellow";
   sq5.style.backgroundColor = "yellow";
-  alert("BINGO! Nice one.");
+  const winner = document.createElement("div");
+  winner.id = "winner";
+  const image = document.createElement("img");
+  image.setAttribute("src", "./images/bingo.gif");
+  winner.appendChild(image);
+  bingoCanvas.appendChild(winner);
 }
 function checkLines(sq1, sq2, sq3, sq4, sq5) {
   if (
