@@ -63,13 +63,13 @@ function turnSpaceGray() {
     });
   });
 }
-function makeBingoCanvas() {
-  let randomArray = createRandomArray(g2iPhrases, BINGO_SQUARES);
+function makeBingoCanvas(phrases, squares) {
+  let randomArray = createRandomArray(phrases, squares);
 
   // 25 for 25 divs (5 * 5) for bingo spaces
   const FREE_SPACE = 13;
   const idxToSpaceNumber = (idx) => idx + 1;
-  for (let idx = 0; idx < BINGO_SQUARES; idx++) {
+  for (let idx = 0; idx < squares; idx++) {
     let newSpace = document.createElement("div");
     newSpace.classList.add("bingo-space");
     newSpace.id = "box" + idx;
@@ -100,7 +100,7 @@ function resetBoard() {
     .querySelectorAll(".bingo-space")
     .forEach((space) => bingoCanvas.removeChild(space));
   document.getElementById("winner").remove();
-  makeBingoCanvas();
+  makeBingoCanvas(g2iPhrases, BINGO_SQUARES);
 }
 
 function gotABingo(sq1, sq2, sq3, sq4, sq5) {
@@ -215,4 +215,4 @@ function checkBingo() {
   checkHorizontalBingo();
   checkDiagonalBingo();
 }
-makeBingoCanvas();
+makeBingoCanvas(g2iPhrases, BINGO_SQUARES);
