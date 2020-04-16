@@ -288,9 +288,6 @@ img {
 }
 .main-navigation .nav-container .logo-links {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-content: baseline;
 }
 @media (max-width: 800px) {
   .main-navigation .nav-container .logo-links {
@@ -311,7 +308,7 @@ img {
   }
 }
 .main-navigation .nav-container .logo-links .page-title {
-  margin-left: 5%;
+  text-align: center;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-links .page-title {
