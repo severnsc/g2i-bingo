@@ -50,13 +50,7 @@ function createRandomArray(sourceArray, arrayLength) {
   }
   return randomArray;
 }
-function getBingoText(randomArray) {
-  if (randomArray.length > 0) {
-    let index = Math.floor(Math.random() * randomArray.length);
-    let spaceText = randomArray[index].text;
-    return spaceText;
-  }
-}
+
 function turnSpaceGray() {
   const spaces = document.querySelectorAll(".bingo-space");
   spaces.forEach((space) => {
@@ -97,9 +91,7 @@ function makeBingoCanvas() {
       newSpace.appendChild(insideText);
       freeSpaceText.innerHTML = "Free Space";
     } else {
-      const bingoText = getBingoText(randomArray);
-      randomArray = randomArray.filter(({ text }) => text !== bingoText);
-      insideText.innerHTML = bingoText;
+      insideText.innerHTML = randomArray[idx].text;
       newSpace.appendChild(insideText);
     }
   }
