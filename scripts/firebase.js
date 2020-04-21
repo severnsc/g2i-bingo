@@ -40,3 +40,8 @@ const g2iPhrasesArray = [
 const getG2iPhrases = () => {
   return Promise.resolve(g2iPhrasesArray);
 };
+
+const createPhrase = (phrase) => {
+  g2iPhrasesArray.push(phrase);
+  return Promise.resolve(g2iPhrasesArray);
+};
