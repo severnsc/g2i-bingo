@@ -89,11 +89,15 @@ function makeBingoCanvas(phrases, squares) {
     }
   }
 }
+
 function resetBoard() {
   document
     .querySelectorAll(".bingo-space")
     .forEach((space) => bingoCanvas.removeChild(space));
-  document.getElementById("winner").remove();
+  const winner = document.getElementById("winner");
+  if (winner) {
+    winner.remove();
+  }
   makeBingoCanvas(g2iPhrases, BINGO_SQUARES);
 }
 
